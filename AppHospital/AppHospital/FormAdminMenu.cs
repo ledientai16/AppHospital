@@ -21,6 +21,7 @@ namespace AppHospital
         {
             panelInternalManager.Visible = false;
             panelPatient.Visible = false;
+            panelMoney.Visible = false;
 
         }
         private void hideSubmenu()
@@ -28,6 +29,14 @@ namespace AppHospital
             if (panelInternalManager.Visible == true)
             {
                 panelInternalManager.Visible = false;
+            }
+            if (panelMoney.Visible == true)
+            {
+                panelMoney.Visible = false;
+            }
+            if (panelPatient.Visible == true)
+            {
+                panelPatient.Visible = false;
             }
         }
         private void showSubMenu(Panel subMenu)
@@ -40,14 +49,19 @@ namespace AppHospital
             else subMenu.Visible = false;
         }
         //hiện và ẩn sub menu
-        private void btnInternalManager_Click(object sender, EventArgs e)
+      
+
+        private void btnPatient_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelPatient);
+        }
+        private void btnInternal_Click(object sender, EventArgs e)
         {
             showSubMenu(panelInternalManager);
         }
-        
-        private void btnPatientManager_Click(object sender, EventArgs e)
+        private void btnMoney_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelPatient);
+            showSubMenu(panelMoney);
         }
         private Form activeForm = null;
         //mở form con
@@ -68,9 +82,18 @@ namespace AppHospital
 
         }
 
+        //gọi form
         private void btnDoctorManagerment_Click(object sender, EventArgs e)
         {
+            labelContent.Text = "Quản Lý Bác Sĩ";
             openChildForm(new FormDoctorManager());
         }
+
+        private void btnMedical_Click(object sender, EventArgs e)
+        {
+            labelContent.Text = "Quản Lý Chuyên Khoa";
+            openChildForm(new FormDoctorManager());
+        }
+
     }
 }
