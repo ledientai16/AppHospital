@@ -1,0 +1,12 @@
+C:\Users\Admin\source\repos\AppHospital\AppHospital\bin\Debug\AppHospital.exe.config
+C:\Users\Admin\source\repos\AppHospital\AppHospital\bin\Debug\AppHospital.exe
+C:\Users\Admin\source\repos\AppHospital\AppHospital\bin\Debug\AppHospital.pdb
+C:\Users\Admin\source\repos\AppHospital\AppHospital\obj\Debug\AppHospital.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\AppHospital\AppHospital\obj\Debug\AppHospital.Properties.Resources.resources
+C:\Users\Admin\source\repos\AppHospital\AppHospital\obj\Debug\AppHospital.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\AppHospital\AppHospital\obj\Debug\AppHospital.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\AppHospital\AppHospital\obj\Debug\AppHospital.exe
+C:\Users\Admin\source\repos\AppHospital\AppHospital\obj\Debug\AppHospital.pdb
+C:\Users\Admin\source\repos\AppHospital\AppHospital\obj\Debug\AppHospital.FormAdminMenu.resources
+C:\Users\Admin\source\repos\AppHospital\AppHospital\obj\Debug\AppHospital.FormLogin.resources
+C:\Users\Admin\source\repos\AppHospital\AppHospital\obj\Debug\AppHospital.FormDoctorManager.resources
