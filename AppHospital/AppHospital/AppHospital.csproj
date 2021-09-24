@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +55,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Appointment.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BUS\BUS_Medicals.cs" />
+    <Compile Include="DAO\DAO_Medicals.cs" />
+    <Compile Include="Doctor.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Drug.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DrugDetail.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,8 +99,53 @@
     <Compile Include="FormMedicalManager.Designer.cs">
       <DependentUpon>FormMedicalManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="HospitalEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HospitalEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HospitalEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Medical.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MedicalExaminationCard.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MedicalExaminationCardDetail.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MedicalRecord.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Nurse.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Patient.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prescription.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormAdminMenu.resx">
       <DependentUpon>FormAdminMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,6 +168,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EntityDeploy Include="HospitalEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HospitalEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="HospitalEntity.edmx.diagram">
+      <DependentUpon>HospitalEntity.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -137,5 +213,21 @@
   <ItemGroup>
     <None Include="Resources\sign-add-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HospitalEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HospitalEntity.edmx</DependentUpon>
+      <LastGenOutput>HospitalEntity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="HospitalEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HospitalEntity.edmx</DependentUpon>
+      <LastGenOutput>HospitalEntity.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

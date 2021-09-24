@@ -74,7 +74,7 @@ namespace AppHospital
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
 
-            panelChildForm.Controls.Add(childForm);
+            panelChildForm.Controls.Add(activeForm);
             panelChildForm.Tag = childForm;
 
             childForm.BringToFront();
@@ -92,7 +92,7 @@ namespace AppHospital
         private void btnMedical_Click(object sender, EventArgs e)
         {
             labelContent.Text = "Quản Lý Chuyên Khoa";
-            openChildForm(new FormDoctorManager());
+            openChildForm(new FormMedicalManager());
         }
 
     }

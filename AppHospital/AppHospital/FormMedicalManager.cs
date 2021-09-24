@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppHospital.BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,67 @@ namespace AppHospital
 {
     public partial class FormMedicalManager : Form
     {
+         BUS_Medicals busMedicals;
         public FormMedicalManager()
         {
             InitializeComponent();
+            busMedicals = new BUS_Medicals();
+        }
+        //lấy danh sách chuyên khoa và định dạng collums
+        private void GetAllMedicals()
+        {
+            gVMedical.DataSource = null;
+            busMedicals.GetAllMedical(gVMedical);
+            gVMedical.Columns[0].Width = (int)(gVMedical.Width * 0.2);
+            gVMedical.Columns[1].Width = (int)(gVMedical.Width * 0.25);
+            gVMedical.Columns[2].Width = (int)(gVMedical.Width * 0.5);
+           
+        }
+        private void FormMedicalManager_Load(object sender, EventArgs e)
+        {
+            
+            GetAllMedicals();
+        }
+
+        private void gVMedical_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < gVMedical.Rows.Count)
+            {
+                
+                txtID.Text = gVMedical.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtName.Text = gVMedical.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txtDescription.Text = gVMedical.Rows[e.RowIndex].Cells[2].Value.ToString();
+                
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc muốn thêm Chuyên khoa?", "Thêm chuyên khoa", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (txtDescription.Text != "" && txtName.Text.ToString() != "")
+                {
+
+                    Medical m = new Medical();
+                    m.Name = txtName.Text;
+                    m.Description = txtDescription.Text;
+                    
+                    if (busMedicals.AddMedical(m))
+                    {
+                        MessageBox.Show("Tạo sản phẩm thành công");
+                        busMedicals.GetAllMedical(gVMedical);
+                        gVMedical.Rows[gVMedical.RowCount - 1].Selected = true;
+                        gVMedical.CurrentCell = gVMedical.Rows[gVMedical.RowCount - 1].Cells[0];
+                    }
+                    else MessageBox.Show("Thêm Medical thất bại");
+                    txtName.Text = "";
+                    txtDescription.Text = "";
+                   
+                }
+                else MessageBox.Show("Hãy nhập đầy đủ!");
+            }
+            else MessageBox.Show("Hãy suy nghĩ kỹ càng hơn bạn nhé!");
         }
     }
 }

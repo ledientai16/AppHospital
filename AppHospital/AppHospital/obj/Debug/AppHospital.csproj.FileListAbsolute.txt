@@ -23,3 +23,8 @@ C:\Users\Admin\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital
 C:\Users\Admin\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.exe
 C:\Users\Admin\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.pdb
 C:\Users\Admin\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormMedicalManager.resources
+C:\Users\Admin\Desktop\AppHospital\AppHospital\AppHospital\bin\Debug\EntityFramework.dll
+C:\Users\Admin\Desktop\AppHospital\AppHospital\AppHospital\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admin\Desktop\AppHospital\AppHospital\AppHospital\bin\Debug\EntityFramework.xml
+C:\Users\Admin\Desktop\AppHospital\AppHospital\AppHospital\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admin\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.csproj.CopyComplete
