@@ -30,7 +30,7 @@ namespace AppHospital
         private void InitializeComponent()
         {
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.gVMedical = new System.Windows.Forms.DataGridView();
@@ -41,30 +41,34 @@ namespace AppHospital
             this.label3 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.gVMedical)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button2
+            // btnDelete
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button2.Image = global::AppHospital.Properties.Resources.delete_icon;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(375, 209);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(124, 48);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Xóa";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnDelete.Image = global::AppHospital.Properties.Resources.delete_icon;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(35, 175);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(124, 48);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.Color.LightGray;
             this.btnEdit.Image = global::AppHospital.Properties.Resources.Pencil_icon;
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(210, 209);
+            this.btnEdit.Location = new System.Drawing.Point(35, 96);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(124, 48);
             this.btnEdit.TabIndex = 6;
@@ -79,7 +83,7 @@ namespace AppHospital
             this.btnAdd.BackColor = System.Drawing.Color.PaleGreen;
             this.btnAdd.Image = global::AppHospital.Properties.Resources.sign_add_icon;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(51, 209);
+            this.btnAdd.Location = new System.Drawing.Point(35, 20);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(124, 48);
             this.btnAdd.TabIndex = 5;
@@ -162,22 +166,31 @@ namespace AppHospital
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtID);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(2, 30);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(662, 180);
+            this.groupBox1.Size = new System.Drawing.Size(662, 223);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnDelete);
+            this.groupBox2.Controls.Add(this.btnEdit);
+            this.groupBox2.Controls.Add(this.btnAdd);
+            this.groupBox2.Location = new System.Drawing.Point(714, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(181, 230);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
             // 
             // FormMedicalManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 666);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gVMedical);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormMedicalManager";
             this.Text = "Quản lý chuyên khoa";
@@ -185,6 +198,7 @@ namespace AppHospital
             ((System.ComponentModel.ISupportInitialize)(this.gVMedical)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -193,7 +207,7 @@ namespace AppHospital
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridView gVMedical;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtID;
@@ -202,5 +216,7 @@ namespace AppHospital
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
     }
 }
