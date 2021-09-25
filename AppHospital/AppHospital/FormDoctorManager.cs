@@ -25,7 +25,7 @@ namespace AppHospital
         {
             GetAllDoctors();
             busMedicals.GetAllMedical(cBMedical);
-            cbGender.Items.AddRange(new String[] { "nam", "nữ" });
+            cbGender.Text = "nam";
         }
 
         private void GetAllDoctors()
@@ -60,11 +60,42 @@ namespace AppHospital
         private void btnEdit_Click(object sender, EventArgs e)
         {
 
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc muốn chỉnh sửa thông tin?", "Chỉnh sửa bác sĩ", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (checkInfo())
+                {
+
+                    Doctor d = new Doctor();
+                    d.ID = int.Parse(txtID.Text);
+                    d.FirstName = txtFirstName.Text;
+                    d.LastName = txtLastName.Text;
+                    d.Phone = txtPhone.Text;
+                    d.BirthDate = dateBirth.Value;
+                    d.Gender = cbGender.Text;
+                    d.MedicalID = int.Parse(cBMedical.SelectedValue.ToString());
+                    d.Email = txtEmail.Text;
+
+
+
+                    if (busDoctor.EditDoctor(d))
+                    {
+                        MessageBox.Show("Chỉnh sửa thành công");
+                        busDoctor.GetAllDoctors(gVDoctor);
+                      
+                    }
+                    else MessageBox.Show("Chỉnh sửa thất bại");
+                }
+                else MessageBox.Show("Hãy nhập đầy đủ");
+            }
+            else MessageBox.Show("Hãy chắc chắn khi bạn muốn sửa vào lần sau!");
         }
+        //kiểm tra thông tin trước khi chỉnh sửa
         private bool checkInfo() { 
         
-            if (txtFirstName.Text == "" || txtLastName.Text == "" || cbGender.Text == ""
-                || cBMedical.Text == "" ) 
+            if (txtID.Text==""|| txtFirstName.Text == "" || txtLastName.Text == "" || cbGender.Text == ""
+                || cBMedical.Text == ""||txtPhone.Text==""||txtEmail.Text =="") 
                 return false;
             return true;
         }
@@ -104,6 +135,30 @@ namespace AppHospital
             else MessageBox.Show("Hãy suy nghĩ kỹ càng hơn bạn nhé!");
         }
 
-       
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc muốn xóa bác sĩ?", "Xóa bác sĩ", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (txtID.Text != "")
+                {
+                    int id = Int32.Parse(txtID.Text);
+                    if (busDoctor.DeleteDoctor(id))
+                    {
+                        MessageBox.Show("Đã Xóa Thành Công!");
+                        busDoctor.GetAllDoctors(gVDoctor);
+
+                    }
+                    else MessageBox.Show("Đã có lỗi gì đó");
+                }
+                else MessageBox.Show("Hãy chọn bác sĩ muốn xóa");
+
+                //đặt về default
+                txtID.Text = "";
+               
+            }
+            else MessageBox.Show("Hãy suy nghĩ kỹ càng hơn bạn nhé!");
+        }
     }
 }

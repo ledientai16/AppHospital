@@ -85,6 +85,7 @@ namespace AppHospital
         //gọi form
         private void btnDoctorManagerment_Click(object sender, EventArgs e)
         {
+            
             labelContent.Text = "Quản Lý Bác Sĩ";
             openChildForm(new FormDoctorManager());
         }

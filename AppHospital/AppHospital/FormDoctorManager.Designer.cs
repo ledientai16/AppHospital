@@ -48,7 +48,7 @@ namespace AppHospital
             this.txtID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gVDoctor)).BeginInit();
@@ -104,7 +104,11 @@ namespace AppHospital
             // 
             // cbGender
             // 
+            this.cbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGender.FormattingEnabled = true;
+            this.cbGender.Items.AddRange(new object[] {
+            "nam",
+            "nữ"});
             this.cbGender.Location = new System.Drawing.Point(325, 78);
             this.cbGender.Name = "cbGender";
             this.cbGender.Size = new System.Drawing.Size(141, 28);
@@ -112,6 +116,7 @@ namespace AppHospital
             // 
             // cBMedical
             // 
+            this.cBMedical.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBMedical.FormattingEnabled = true;
             this.cBMedical.Location = new System.Drawing.Point(580, 81);
             this.cBMedical.Name = "cBMedical";
@@ -225,19 +230,20 @@ namespace AppHospital
             this.label1.TabIndex = 5;
             this.label1.Text = "Mã";
             // 
-            // button2
+            // btnDelete
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button2.Image = global::AppHospital.Properties.Resources.delete_icon;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(375, 209);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(124, 48);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Xóa";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnDelete.Image = global::AppHospital.Properties.Resources.delete_icon;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(375, 209);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(124, 48);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -274,7 +280,7 @@ namespace AppHospital
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1044, 666);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupbox1);
@@ -308,7 +314,7 @@ namespace AppHospital
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.ComboBox cBMedical;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbGender;

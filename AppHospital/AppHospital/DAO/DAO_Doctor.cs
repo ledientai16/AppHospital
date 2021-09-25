@@ -35,5 +35,38 @@ namespace AppHospital.DAO
             db.Doctors.Add(d);
             db.SaveChanges();
         }
+
+        public Doctor GetDoctorByID(int id)
+        {
+            Doctor d = db.Doctors.Where(s => s.ID == id).FirstOrDefault();
+            return d;
+        }
+        internal bool CheckDoctorByID(int id)
+        {
+
+            if (GetDoctorByID(id) != null)
+                return true;
+            return false;
+        }
+
+        public void DeleteDoctor(int id)
+        {
+            db.Doctors.Remove(GetDoctorByID(id));
+            db.SaveChanges();
+        }
+
+        public void EditDoctor(Doctor d)
+        {
+            Doctor d2 = new Doctor();
+            d2 = GetDoctorByID(d.ID);
+            d2.FirstName = d.FirstName;
+            d2.LastName = d.LastName;
+            d2.Phone = d.Phone;
+            d2.BirthDate = d.BirthDate;
+            d2.Gender = d.Gender;
+            d2.MedicalID = d.MedicalID;
+            d2.Email = d.Email;
+            db.SaveChanges();
+        }
     }
 }
