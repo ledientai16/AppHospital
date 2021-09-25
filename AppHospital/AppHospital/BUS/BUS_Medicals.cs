@@ -19,6 +19,13 @@ namespace AppHospital.BUS
         {
             dg.DataSource = dMedical.GetAllMedicals();
         }
+        //lấy lên combobox
+        public void GetAllMedical(ComboBox cb)
+        {
+            cb.DataSource = dMedical.GetAllMedicals();
+            cb.DisplayMember = "Name";
+            cb.ValueMember = "ID";
+        }
         public bool AddMedical(Medical m)
         {
 
@@ -33,6 +40,26 @@ namespace AppHospital.BUS
                 return false;
             }
 
+        }
+
+        public bool EditMedical(Medical m)
+        {
+            if (dMedical.CheckMedicalByID(m.ID))
+            {
+
+                try
+                {
+                    dMedical.EditMedical(m);
+                    return true;
+                }
+                catch (Exception)
+                {
+
+                    return false;
+                }
+            }
+
+            return false;
         }
     }
 }

@@ -57,6 +57,8 @@
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="Fee" ColumnName="Fee" />
           <ScalarProperty Name="PrescriptionID" ColumnName="PrescriptionID" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="NurseID" ColumnName="NurseID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -76,27 +78,10 @@
           <ScalarProperty Name="Num" ColumnName="Num" />
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="Fee" ColumnName="Fee" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="MedicalExaminationCardDetails">
-      <EntityTypeMapping TypeName="HospitalModel.MedicalExaminationCardDetail">
-        <MappingFragment StoreEntitySet="MedicalExaminationCardDetail">
-          <ScalarProperty Name="MedicalExaminationCardID" ColumnName="MedicalExaminationCardID" />
-          <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
           <ScalarProperty Name="Symptom" ColumnName="Symptom" />
           <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="MedicalRecords">
-      <EntityTypeMapping TypeName="HospitalModel.MedicalRecord">
-        <MappingFragment StoreEntitySet="MedicalRecord">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="Expiry" ColumnName="Expiry" />
           <ScalarProperty Name="PatientID" ColumnName="PatientID" />
-          <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
+          <ScalarProperty Name="NurseID" ColumnName="NurseID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -126,9 +111,6 @@
           <ScalarProperty Name="Gender" ColumnName="Gender" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
-          <ScalarProperty Name="PrescriptionID" ColumnName="PrescriptionID" />
-          <ScalarProperty Name="MedicalExaminationCardID" ColumnName="MedicalExaminationCardID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -138,6 +120,7 @@
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -150,23 +133,27 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ServiceInvoices">
+      <EntityTypeMapping TypeName="HospitalModel.ServiceInvoice">
+        <MappingFragment StoreEntitySet="ServiceInvoice">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Fee" ColumnName="Fee" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="NurseID" ColumnName="NurseID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="HospitalModel.User">
         <MappingFragment StoreEntitySet="Users">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="RoleUser" ColumnName="RoleUser" />
+          <ScalarProperty Name="Role_User" ColumnName="Role_User" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="InvoiceDetail" TypeName="HospitalModel.InvoiceDetail" StoreEntitySet="InvoiceDetail">
-      <EndProperty Name="Invoice">
-        <ScalarProperty Name="ID" ColumnName="InvoiceID" />
-      </EndProperty>
-      <EndProperty Name="Patient">
-        <ScalarProperty Name="ID" ColumnName="PatientID" />
-      </EndProperty>
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

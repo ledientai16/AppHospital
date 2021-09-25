@@ -26,9 +26,9 @@
           <Property Name="Gender" Type="varchar" MaxLength="45" />
           <Property Name="Phone" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Email" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="YearsExperience" Type="int" Nullable="false" />
-          <Property Name="Image" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="MedicalID" Type="int" />
+          <Property Name="YearsExperience" Type="int" />
+          <Property Name="Image" Type="varchar" MaxLength="100" />
+          <Property Name="MedicalID" Type="int" Nullable="false" />
           <Property Name="UserID" Type="int" />
         </EntityType>
         <EntityType Name="Drug">
@@ -36,8 +36,8 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="45" />
-          <Property Name="UnitPrice" Type="varchar" MaxLength="45" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="UnitPrice" Type="nvarchar" MaxLength="50" />
           <Property Name="Quantity" Type="int" />
           <Property Name="Expiry" Type="date" />
           <Property Name="Manufacturer" Type="date" />
@@ -50,75 +50,53 @@
           <Property Name="PrescriptionID" Type="int" Nullable="false" />
           <Property Name="DrugID" Type="int" Nullable="false" />
           <Property Name="Quantity" Type="int" />
-          <Property Name="UserGuide" Type="varchar(max)" />
+          <Property Name="UserGuide" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Invoice">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CreatedDate" Type="varchar" MaxLength="45" />
+          <Property Name="CreatedDate" Type="datetime" />
           <Property Name="Fee" Type="int" />
           <Property Name="PrescriptionID" Type="int" />
-        </EntityType>
-        <EntityType Name="InvoiceDetail">
-          <Key>
-            <PropertyRef Name="InvoiceID" />
-            <PropertyRef Name="PatientID" />
-          </Key>
-          <Property Name="InvoiceID" Type="int" Nullable="false" />
-          <Property Name="PatientID" Type="int" Nullable="false" />
+          <Property Name="PatientID" Type="int" />
+          <Property Name="NurseID" Type="int" />
         </EntityType>
         <EntityType Name="Medical">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="45" />
-          <Property Name="Description" Type="varchar" MaxLength="4000" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="4000" />
         </EntityType>
         <EntityType Name="MedicalExaminationCard">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Num" Type="varchar" MaxLength="45" />
-          <Property Name="Date" Type="date" />
-          <Property Name="Fee" Type="int" />
-        </EntityType>
-        <EntityType Name="MedicalExaminationCardDetail">
-          <Key>
-            <PropertyRef Name="MedicalExaminationCardID" />
-            <PropertyRef Name="DoctorID" />
-          </Key>
-          <Property Name="MedicalExaminationCardID" Type="int" Nullable="false" />
-          <Property Name="DoctorID" Type="int" Nullable="false" />
-          <Property Name="Symptom" Type="varchar(max)" />
-          <Property Name="Diagnosis" Type="varchar(max)" />
-        </EntityType>
-        <EntityType Name="MedicalRecord">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CreatedDate" Type="date" />
-          <Property Name="Expiry" Type="date" />
+          <Property Name="Num" Type="int" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Fee" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="Symptom" Type="nvarchar(max)" />
+          <Property Name="Diagnosis" Type="nvarchar(max)" />
           <Property Name="PatientID" Type="int" />
-          <Property Name="DoctorID" Type="int" />
+          <Property Name="NurseID" Type="int" />
         </EntityType>
         <EntityType Name="Nurse">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FirstName" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="LastName" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="BirthDate" Type="date" Nullable="false" />
-          <Property Name="Gender" Type="varchar" MaxLength="45" />
-          <Property Name="Phone" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="Email" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="Image" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="MedicalID" Type="int" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Image" Type="nvarchar" MaxLength="100" />
+          <Property Name="MedicalID" Type="int" Nullable="false" />
           <Property Name="UserID" Type="int" />
         </EntityType>
         <EntityType Name="Patient">
@@ -126,15 +104,12 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FirstName" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="LastName" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="45" />
           <Property Name="BirthDate" Type="date" Nullable="false" />
-          <Property Name="Gender" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="Phone" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="Email" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="UserID" Type="int" />
-          <Property Name="PrescriptionID" Type="int" />
-          <Property Name="MedicalExaminationCardID" Type="int" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Prescription">
           <Key>
@@ -143,23 +118,35 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CreatedDate" Type="date" />
           <Property Name="DoctorID" Type="int" />
+          <Property Name="PatientID" Type="int" />
         </EntityType>
         <EntityType Name="Service">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="45" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="MedicalID" Type="int" />
+        </EntityType>
+        <EntityType Name="ServiceInvoice">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fee" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="ServiceID" Type="int" />
+          <Property Name="PatientID" Type="int" />
+          <Property Name="NurseID" Type="int" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="RoleUser" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Role_User" Type="nchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <Association Name="FK_Appointment_Doctor">
           <End Role="Doctor" Type="Self.Doctor" Multiplicity="1" />
@@ -186,7 +173,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Doctor_Medical">
-          <End Role="Medical" Type="Self.Medical" Multiplicity="0..1" />
+          <End Role="Medical" Type="Self.Medical" Multiplicity="1" />
           <End Role="Doctor" Type="Self.Doctor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Medical">
@@ -233,6 +220,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Invoice_Nurse">
+          <End Role="Nurse" Type="Self.Nurse" Multiplicity="0..1" />
+          <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nurse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="NurseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invoice_Patient">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Invoice_Prescription">
           <End Role="Prescription" Type="Self.Prescription" Multiplicity="0..1" />
           <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
@@ -245,80 +256,32 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_InvoiceDetail_Invoice">
-          <End Role="Invoice" Type="Self.Invoice" Multiplicity="1" />
-          <End Role="InvoiceDetail" Type="Self.InvoiceDetail" Multiplicity="*" />
+        <Association Name="FK_MedicalExaminationCard_Nurse">
+          <End Role="Nurse" Type="Self.Nurse" Multiplicity="0..1" />
+          <End Role="MedicalExaminationCard" Type="Self.MedicalExaminationCard" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Invoice">
+            <Principal Role="Nurse">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="InvoiceDetail">
-              <PropertyRef Name="InvoiceID" />
+            <Dependent Role="MedicalExaminationCard">
+              <PropertyRef Name="NurseID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_InvoiceDetail_Patient">
-          <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
-          <End Role="InvoiceDetail" Type="Self.InvoiceDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Patient">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="InvoiceDetail">
-              <PropertyRef Name="PatientID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_MedicalExaminationCardDetail_Doctor">
-          <End Role="Doctor" Type="Self.Doctor" Multiplicity="1" />
-          <End Role="MedicalExaminationCardDetail" Type="Self.MedicalExaminationCardDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Doctor">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="MedicalExaminationCardDetail">
-              <PropertyRef Name="DoctorID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_MedicalExaminationCardDetail_MedicalExaminationCard">
-          <End Role="MedicalExaminationCard" Type="Self.MedicalExaminationCard" Multiplicity="1" />
-          <End Role="MedicalExaminationCardDetail" Type="Self.MedicalExaminationCardDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MedicalExaminationCard">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="MedicalExaminationCardDetail">
-              <PropertyRef Name="MedicalExaminationCardID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_MedicalRecord_Doctor">
-          <End Role="Doctor" Type="Self.Doctor" Multiplicity="0..1" />
-          <End Role="MedicalRecord" Type="Self.MedicalRecord" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Doctor">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="MedicalRecord">
-              <PropertyRef Name="DoctorID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_MedicalRecord_Patient">
+        <Association Name="FK_MedicalExaminationCard_Patient">
           <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
-          <End Role="MedicalRecord" Type="Self.MedicalRecord" Multiplicity="*" />
+          <End Role="MedicalExaminationCard" Type="Self.MedicalExaminationCard" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Patient">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="MedicalRecord">
+            <Dependent Role="MedicalExaminationCard">
               <PropertyRef Name="PatientID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Nurse_Medical">
-          <End Role="Medical" Type="Self.Medical" Multiplicity="0..1" />
+          <End Role="Medical" Type="Self.Medical" Multiplicity="1" />
           <End Role="Nurse" Type="Self.Nurse" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Medical">
@@ -341,39 +304,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Patient_MedicalExaminationCard">
-          <End Role="MedicalExaminationCard" Type="Self.MedicalExaminationCard" Multiplicity="0..1" />
-          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+        <Association Name="FK_Prescription_Doctor">
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="0..1" />
+          <End Role="Prescription" Type="Self.Prescription" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="MedicalExaminationCard">
+            <Principal Role="Doctor">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Patient">
-              <PropertyRef Name="MedicalExaminationCardID" />
+            <Dependent Role="Prescription">
+              <PropertyRef Name="DoctorID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Patient_Prescription">
-          <End Role="Prescription" Type="Self.Prescription" Multiplicity="0..1" />
-          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+        <Association Name="FK_Prescription_Patient">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="Prescription" Type="Self.Prescription" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Prescription">
+            <Principal Role="Patient">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Patient">
-              <PropertyRef Name="PrescriptionID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Patient_Users">
-          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
-          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Patient">
-              <PropertyRef Name="UserID" />
+            <Dependent Role="Prescription">
+              <PropertyRef Name="PatientID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -389,21 +340,55 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ServiceInvoice_Nurse">
+          <End Role="Nurse" Type="Self.Nurse" Multiplicity="0..1" />
+          <End Role="ServiceInvoice" Type="Self.ServiceInvoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nurse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ServiceInvoice">
+              <PropertyRef Name="NurseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ServiceInvoice_Patient">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="ServiceInvoice" Type="Self.ServiceInvoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ServiceInvoice">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ServiceInvoice_Service">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+          <End Role="ServiceInvoice" Type="Self.ServiceInvoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ServiceInvoice">
+              <PropertyRef Name="ServiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="HospitalModelStoreContainer">
           <EntitySet Name="Appointment" EntityType="Self.Appointment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Doctor" EntityType="Self.Doctor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Drug" EntityType="Self.Drug" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DrugDetail" EntityType="Self.DrugDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Invoice" EntityType="Self.Invoice" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="InvoiceDetail" EntityType="Self.InvoiceDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Medical" EntityType="Self.Medical" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MedicalExaminationCard" EntityType="Self.MedicalExaminationCard" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="MedicalExaminationCardDetail" EntityType="Self.MedicalExaminationCardDetail" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="MedicalRecord" EntityType="Self.MedicalRecord" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Nurse" EntityType="Self.Nurse" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Prescription" EntityType="Self.Prescription" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ServiceInvoice" EntityType="Self.ServiceInvoice" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Appointment_Doctor" Association="Self.FK_Appointment_Doctor">
             <End Role="Doctor" EntitySet="Doctor" />
@@ -429,33 +414,25 @@
             <End Role="Prescription" EntitySet="Prescription" />
             <End Role="DrugDetail" EntitySet="DrugDetail" />
           </AssociationSet>
+          <AssociationSet Name="FK_Invoice_Nurse" Association="Self.FK_Invoice_Nurse">
+            <End Role="Nurse" EntitySet="Nurse" />
+            <End Role="Invoice" EntitySet="Invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invoice_Patient" Association="Self.FK_Invoice_Patient">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Invoice" EntitySet="Invoice" />
+          </AssociationSet>
           <AssociationSet Name="FK_Invoice_Prescription" Association="Self.FK_Invoice_Prescription">
             <End Role="Prescription" EntitySet="Prescription" />
             <End Role="Invoice" EntitySet="Invoice" />
           </AssociationSet>
-          <AssociationSet Name="FK_InvoiceDetail_Invoice" Association="Self.FK_InvoiceDetail_Invoice">
-            <End Role="Invoice" EntitySet="Invoice" />
-            <End Role="InvoiceDetail" EntitySet="InvoiceDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_InvoiceDetail_Patient" Association="Self.FK_InvoiceDetail_Patient">
-            <End Role="Patient" EntitySet="Patient" />
-            <End Role="InvoiceDetail" EntitySet="InvoiceDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MedicalExaminationCardDetail_Doctor" Association="Self.FK_MedicalExaminationCardDetail_Doctor">
-            <End Role="Doctor" EntitySet="Doctor" />
-            <End Role="MedicalExaminationCardDetail" EntitySet="MedicalExaminationCardDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MedicalExaminationCardDetail_MedicalExaminationCard" Association="Self.FK_MedicalExaminationCardDetail_MedicalExaminationCard">
+          <AssociationSet Name="FK_MedicalExaminationCard_Nurse" Association="Self.FK_MedicalExaminationCard_Nurse">
+            <End Role="Nurse" EntitySet="Nurse" />
             <End Role="MedicalExaminationCard" EntitySet="MedicalExaminationCard" />
-            <End Role="MedicalExaminationCardDetail" EntitySet="MedicalExaminationCardDetail" />
           </AssociationSet>
-          <AssociationSet Name="FK_MedicalRecord_Doctor" Association="Self.FK_MedicalRecord_Doctor">
-            <End Role="Doctor" EntitySet="Doctor" />
-            <End Role="MedicalRecord" EntitySet="MedicalRecord" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MedicalRecord_Patient" Association="Self.FK_MedicalRecord_Patient">
+          <AssociationSet Name="FK_MedicalExaminationCard_Patient" Association="Self.FK_MedicalExaminationCard_Patient">
             <End Role="Patient" EntitySet="Patient" />
-            <End Role="MedicalRecord" EntitySet="MedicalRecord" />
+            <End Role="MedicalExaminationCard" EntitySet="MedicalExaminationCard" />
           </AssociationSet>
           <AssociationSet Name="FK_Nurse_Medical" Association="Self.FK_Nurse_Medical">
             <End Role="Medical" EntitySet="Medical" />
@@ -465,21 +442,29 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="Nurse" EntitySet="Nurse" />
           </AssociationSet>
-          <AssociationSet Name="FK_Patient_MedicalExaminationCard" Association="Self.FK_Patient_MedicalExaminationCard">
-            <End Role="MedicalExaminationCard" EntitySet="MedicalExaminationCard" />
-            <End Role="Patient" EntitySet="Patient" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Patient_Prescription" Association="Self.FK_Patient_Prescription">
+          <AssociationSet Name="FK_Prescription_Doctor" Association="Self.FK_Prescription_Doctor">
+            <End Role="Doctor" EntitySet="Doctor" />
             <End Role="Prescription" EntitySet="Prescription" />
-            <End Role="Patient" EntitySet="Patient" />
           </AssociationSet>
-          <AssociationSet Name="FK_Patient_Users" Association="Self.FK_Patient_Users">
-            <End Role="Users" EntitySet="Users" />
+          <AssociationSet Name="FK_Prescription_Patient" Association="Self.FK_Prescription_Patient">
             <End Role="Patient" EntitySet="Patient" />
+            <End Role="Prescription" EntitySet="Prescription" />
           </AssociationSet>
           <AssociationSet Name="FK_Service_Medical" Association="Self.FK_Service_Medical">
             <End Role="Medical" EntitySet="Medical" />
             <End Role="Service" EntitySet="Service" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ServiceInvoice_Nurse" Association="Self.FK_ServiceInvoice_Nurse">
+            <End Role="Nurse" EntitySet="Nurse" />
+            <End Role="ServiceInvoice" EntitySet="ServiceInvoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ServiceInvoice_Patient" Association="Self.FK_ServiceInvoice_Patient">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="ServiceInvoice" EntitySet="ServiceInvoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ServiceInvoice_Service" Association="Self.FK_ServiceInvoice_Service">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="ServiceInvoice" EntitySet="ServiceInvoice" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -510,23 +495,22 @@
           <Property Name="Gender" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="Phone" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="YearsExperience" Type="Int32" Nullable="false" />
-          <Property Name="Image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MedicalID" Type="Int32" />
+          <Property Name="YearsExperience" Type="Int32" />
+          <Property Name="Image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MedicalID" Type="Int32" Nullable="false" />
           <Property Name="UserID" Type="Int32" />
           <NavigationProperty Name="Appointments" Relationship="Self.FK_Appointment_Doctor" FromRole="Doctor" ToRole="Appointment" />
           <NavigationProperty Name="Medical" Relationship="Self.FK_Doctor_Medical" FromRole="Doctor" ToRole="Medical" />
           <NavigationProperty Name="User" Relationship="Self.FK_Doctor_Users" FromRole="Doctor" ToRole="Users" />
-          <NavigationProperty Name="MedicalExaminationCardDetails" Relationship="Self.FK_MedicalExaminationCardDetail_Doctor" FromRole="Doctor" ToRole="MedicalExaminationCardDetail" />
-          <NavigationProperty Name="MedicalRecords" Relationship="Self.FK_MedicalRecord_Doctor" FromRole="Doctor" ToRole="MedicalRecord" />
+          <NavigationProperty Name="Prescriptions" Relationship="Self.FK_Prescription_Doctor" FromRole="Doctor" ToRole="Prescription" />
         </EntityType>
         <EntityType Name="Drug">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="UnitPrice" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UnitPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Quantity" Type="Int32" />
           <Property Name="Expiry" Type="DateTime" Precision="0" />
           <Property Name="Manufacturer" Type="DateTime" Precision="0" />
@@ -540,7 +524,7 @@
           <Property Name="PrescriptionID" Type="Int32" Nullable="false" />
           <Property Name="DrugID" Type="Int32" Nullable="false" />
           <Property Name="Quantity" Type="Int32" />
-          <Property Name="UserGuide" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UserGuide" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Drug" Relationship="Self.FK_DrugDetail_Drug" FromRole="DrugDetail" ToRole="Drug" />
           <NavigationProperty Name="Prescription" Relationship="Self.FK_DrugDetail_Prescription" FromRole="DrugDetail" ToRole="Prescription" />
         </EntityType>
@@ -549,19 +533,22 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CreatedDate" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
           <Property Name="Fee" Type="Int32" />
           <Property Name="PrescriptionID" Type="Int32" />
+          <Property Name="PatientID" Type="Int32" />
+          <Property Name="NurseID" Type="Int32" />
+          <NavigationProperty Name="Nurse" Relationship="Self.FK_Invoice_Nurse" FromRole="Invoice" ToRole="Nurse" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK_Invoice_Patient" FromRole="Invoice" ToRole="Patient" />
           <NavigationProperty Name="Prescription" Relationship="Self.FK_Invoice_Prescription" FromRole="Invoice" ToRole="Prescription" />
-          <NavigationProperty Name="Patients" Relationship="Self.InvoiceDetail" FromRole="Invoice" ToRole="Patient" />
         </EntityType>
         <EntityType Name="Medical">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Doctors" Relationship="Self.FK_Doctor_Medical" FromRole="Medical" ToRole="Doctor" />
           <NavigationProperty Name="Nurses" Relationship="Self.FK_Nurse_Medical" FromRole="Medical" ToRole="Nurse" />
           <NavigationProperty Name="Services" Relationship="Self.FK_Service_Medical" FromRole="Medical" ToRole="Service" />
@@ -571,73 +558,52 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Num" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="Date" Type="DateTime" Precision="0" />
-          <Property Name="Fee" Type="Int32" />
-          <NavigationProperty Name="MedicalExaminationCardDetails" Relationship="Self.FK_MedicalExaminationCardDetail_MedicalExaminationCard" FromRole="MedicalExaminationCard" ToRole="MedicalExaminationCardDetail" />
-          <NavigationProperty Name="Patients" Relationship="Self.FK_Patient_MedicalExaminationCard" FromRole="MedicalExaminationCard" ToRole="Patient" />
-        </EntityType>
-        <EntityType Name="MedicalExaminationCardDetail">
-          <Key>
-            <PropertyRef Name="MedicalExaminationCardID" />
-            <PropertyRef Name="DoctorID" />
-          </Key>
-          <Property Name="MedicalExaminationCardID" Type="Int32" Nullable="false" />
-          <Property Name="DoctorID" Type="Int32" Nullable="false" />
-          <Property Name="Symptom" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Diagnosis" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Doctor" Relationship="Self.FK_MedicalExaminationCardDetail_Doctor" FromRole="MedicalExaminationCardDetail" ToRole="Doctor" />
-          <NavigationProperty Name="MedicalExaminationCard" Relationship="Self.FK_MedicalExaminationCardDetail_MedicalExaminationCard" FromRole="MedicalExaminationCardDetail" ToRole="MedicalExaminationCard" />
-        </EntityType>
-        <EntityType Name="MedicalRecord">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
-          <Property Name="Expiry" Type="DateTime" Precision="0" />
+          <Property Name="Num" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fee" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="Symptom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Diagnosis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="PatientID" Type="Int32" />
-          <Property Name="DoctorID" Type="Int32" />
-          <NavigationProperty Name="Doctor" Relationship="Self.FK_MedicalRecord_Doctor" FromRole="MedicalRecord" ToRole="Doctor" />
-          <NavigationProperty Name="Patient" Relationship="Self.FK_MedicalRecord_Patient" FromRole="MedicalRecord" ToRole="Patient" />
+          <Property Name="NurseID" Type="Int32" />
+          <NavigationProperty Name="Nurse" Relationship="Self.FK_MedicalExaminationCard_Nurse" FromRole="MedicalExaminationCard" ToRole="Nurse" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK_MedicalExaminationCard_Patient" FromRole="MedicalExaminationCard" ToRole="Patient" />
         </EntityType>
         <EntityType Name="Nurse">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FirstName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="LastName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Gender" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="Phone" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MedicalID" Type="Int32" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MedicalID" Type="Int32" Nullable="false" />
           <Property Name="UserID" Type="Int32" />
+          <NavigationProperty Name="Invoices" Relationship="Self.FK_Invoice_Nurse" FromRole="Nurse" ToRole="Invoice" />
           <NavigationProperty Name="Medical" Relationship="Self.FK_Nurse_Medical" FromRole="Nurse" ToRole="Medical" />
+          <NavigationProperty Name="MedicalExaminationCards" Relationship="Self.FK_MedicalExaminationCard_Nurse" FromRole="Nurse" ToRole="MedicalExaminationCard" />
           <NavigationProperty Name="User" Relationship="Self.FK_Nurse_Users" FromRole="Nurse" ToRole="Users" />
+          <NavigationProperty Name="ServiceInvoices" Relationship="Self.FK_ServiceInvoice_Nurse" FromRole="Nurse" ToRole="ServiceInvoice" />
         </EntityType>
         <EntityType Name="Patient">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FirstName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="LastName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Gender" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Phone" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="UserID" Type="Int32" />
-          <Property Name="PrescriptionID" Type="Int32" />
-          <Property Name="MedicalExaminationCardID" Type="Int32" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Appointments" Relationship="Self.FK_Appointment_Patient" FromRole="Patient" ToRole="Appointment" />
-          <NavigationProperty Name="MedicalExaminationCard" Relationship="Self.FK_Patient_MedicalExaminationCard" FromRole="Patient" ToRole="MedicalExaminationCard" />
-          <NavigationProperty Name="MedicalRecords" Relationship="Self.FK_MedicalRecord_Patient" FromRole="Patient" ToRole="MedicalRecord" />
-          <NavigationProperty Name="Prescription" Relationship="Self.FK_Patient_Prescription" FromRole="Patient" ToRole="Prescription" />
-          <NavigationProperty Name="User" Relationship="Self.FK_Patient_Users" FromRole="Patient" ToRole="Users" />
-          <NavigationProperty Name="Invoices" Relationship="Self.InvoiceDetail" FromRole="Patient" ToRole="Invoice" />
+          <NavigationProperty Name="Invoices" Relationship="Self.FK_Invoice_Patient" FromRole="Patient" ToRole="Invoice" />
+          <NavigationProperty Name="MedicalExaminationCards" Relationship="Self.FK_MedicalExaminationCard_Patient" FromRole="Patient" ToRole="MedicalExaminationCard" />
+          <NavigationProperty Name="Prescriptions" Relationship="Self.FK_Prescription_Patient" FromRole="Patient" ToRole="Prescription" />
+          <NavigationProperty Name="ServiceInvoices" Relationship="Self.FK_ServiceInvoice_Patient" FromRole="Patient" ToRole="ServiceInvoice" />
         </EntityType>
         <EntityType Name="Prescription">
           <Key>
@@ -646,30 +612,46 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CreatedDate" Type="DateTime" Precision="0" />
           <Property Name="DoctorID" Type="Int32" />
+          <Property Name="PatientID" Type="Int32" />
+          <NavigationProperty Name="Doctor" Relationship="Self.FK_Prescription_Doctor" FromRole="Prescription" ToRole="Doctor" />
           <NavigationProperty Name="DrugDetails" Relationship="Self.FK_DrugDetail_Prescription" FromRole="Prescription" ToRole="DrugDetail" />
           <NavigationProperty Name="Invoices" Relationship="Self.FK_Invoice_Prescription" FromRole="Prescription" ToRole="Invoice" />
-          <NavigationProperty Name="Patients" Relationship="Self.FK_Patient_Prescription" FromRole="Prescription" ToRole="Patient" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK_Prescription_Patient" FromRole="Prescription" ToRole="Patient" />
         </EntityType>
         <EntityType Name="Service">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MedicalID" Type="Int32" />
           <NavigationProperty Name="Medical" Relationship="Self.FK_Service_Medical" FromRole="Service" ToRole="Medical" />
+          <NavigationProperty Name="ServiceInvoices" Relationship="Self.FK_ServiceInvoice_Service" FromRole="Service" ToRole="ServiceInvoice" />
+        </EntityType>
+        <EntityType Name="ServiceInvoice">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fee" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="ServiceID" Type="Int32" />
+          <Property Name="PatientID" Type="Int32" />
+          <Property Name="NurseID" Type="Int32" />
+          <NavigationProperty Name="Nurse" Relationship="Self.FK_ServiceInvoice_Nurse" FromRole="ServiceInvoice" ToRole="Nurse" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK_ServiceInvoice_Patient" FromRole="ServiceInvoice" ToRole="Patient" />
+          <NavigationProperty Name="Service" Relationship="Self.FK_ServiceInvoice_Service" FromRole="ServiceInvoice" ToRole="Service" />
         </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="RoleUser" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Role_User" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Doctors" Relationship="Self.FK_Doctor_Users" FromRole="Users" ToRole="Doctor" />
           <NavigationProperty Name="Nurses" Relationship="Self.FK_Nurse_Users" FromRole="Users" ToRole="Nurse" />
-          <NavigationProperty Name="Patients" Relationship="Self.FK_Patient_Users" FromRole="Users" ToRole="Patient" />
         </EntityType>
         <Association Name="FK_Appointment_Doctor">
           <End Role="Doctor" Type="Self.Doctor" Multiplicity="1" />
@@ -696,7 +678,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Doctor_Medical">
-          <End Role="Medical" Type="Self.Medical" Multiplicity="0..1" />
+          <End Role="Medical" Type="Self.Medical" Multiplicity="1" />
           <End Role="Doctor" Type="Self.Doctor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Medical">
@@ -719,26 +701,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_MedicalExaminationCardDetail_Doctor">
-          <End Role="Doctor" Type="Self.Doctor" Multiplicity="1" />
-          <End Role="MedicalExaminationCardDetail" Type="Self.MedicalExaminationCardDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Doctor">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="MedicalExaminationCardDetail">
-              <PropertyRef Name="DoctorID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_MedicalRecord_Doctor">
+        <Association Name="FK_Prescription_Doctor">
           <End Role="Doctor" Type="Self.Doctor" Multiplicity="0..1" />
-          <End Role="MedicalRecord" Type="Self.MedicalRecord" Multiplicity="*" />
+          <End Role="Prescription" Type="Self.Prescription" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Doctor">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="MedicalRecord">
+            <Dependent Role="Prescription">
               <PropertyRef Name="DoctorID" />
             </Dependent>
           </ReferentialConstraint>
@@ -767,6 +737,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Invoice_Nurse">
+          <End Role="Nurse" Type="Self.Nurse" Multiplicity="0..1" />
+          <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nurse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="NurseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invoice_Patient">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Invoice_Prescription">
           <End Role="Prescription" Type="Self.Prescription" Multiplicity="0..1" />
           <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
@@ -780,7 +774,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Nurse_Medical">
-          <End Role="Medical" Type="Self.Medical" Multiplicity="0..1" />
+          <End Role="Medical" Type="Self.Medical" Multiplicity="1" />
           <End Role="Nurse" Type="Self.Nurse" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Medical">
@@ -803,38 +797,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_MedicalExaminationCardDetail_MedicalExaminationCard">
-          <End Role="MedicalExaminationCard" Type="Self.MedicalExaminationCard" Multiplicity="1" />
-          <End Role="MedicalExaminationCardDetail" Type="Self.MedicalExaminationCardDetail" Multiplicity="*" />
+        <Association Name="FK_MedicalExaminationCard_Nurse">
+          <End Role="Nurse" Type="Self.Nurse" Multiplicity="0..1" />
+          <End Role="MedicalExaminationCard" Type="Self.MedicalExaminationCard" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="MedicalExaminationCard">
+            <Principal Role="Nurse">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="MedicalExaminationCardDetail">
-              <PropertyRef Name="MedicalExaminationCardID" />
+            <Dependent Role="MedicalExaminationCard">
+              <PropertyRef Name="NurseID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Patient_MedicalExaminationCard">
-          <End Role="MedicalExaminationCard" Type="Self.MedicalExaminationCard" Multiplicity="0..1" />
-          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MedicalExaminationCard">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Patient">
-              <PropertyRef Name="MedicalExaminationCardID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_MedicalRecord_Patient">
+        <Association Name="FK_MedicalExaminationCard_Patient">
           <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
-          <End Role="MedicalRecord" Type="Self.MedicalRecord" Multiplicity="*" />
+          <End Role="MedicalExaminationCard" Type="Self.MedicalExaminationCard" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Patient">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="MedicalRecord">
+            <Dependent Role="MedicalExaminationCard">
               <PropertyRef Name="PatientID" />
             </Dependent>
           </ReferentialConstraint>
@@ -851,33 +833,53 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Patient_Prescription">
-          <End Role="Prescription" Type="Self.Prescription" Multiplicity="0..1" />
-          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+        <Association Name="FK_ServiceInvoice_Nurse">
+          <End Role="Nurse" Type="Self.Nurse" Multiplicity="0..1" />
+          <End Role="ServiceInvoice" Type="Self.ServiceInvoice" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Prescription">
+            <Principal Role="Nurse">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Patient">
-              <PropertyRef Name="PrescriptionID" />
+            <Dependent Role="ServiceInvoice">
+              <PropertyRef Name="NurseID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Patient_Users">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+        <Association Name="FK_Prescription_Patient">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="Prescription" Type="Self.Prescription" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Users">
+            <Principal Role="Patient">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Patient">
-              <PropertyRef Name="UserID" />
+            <Dependent Role="Prescription">
+              <PropertyRef Name="PatientID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="InvoiceDetail">
-          <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
-          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+        <Association Name="FK_ServiceInvoice_Patient">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="ServiceInvoice" Type="Self.ServiceInvoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ServiceInvoice">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ServiceInvoice_Service">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+          <End Role="ServiceInvoice" Type="Self.ServiceInvoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ServiceInvoice">
+              <PropertyRef Name="ServiceID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <EntityContainer Name="HospitalEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Appointments" EntityType="Self.Appointment" />
@@ -887,12 +889,11 @@
           <EntitySet Name="Invoices" EntityType="Self.Invoice" />
           <EntitySet Name="Medicals" EntityType="Self.Medical" />
           <EntitySet Name="MedicalExaminationCards" EntityType="Self.MedicalExaminationCard" />
-          <EntitySet Name="MedicalExaminationCardDetails" EntityType="Self.MedicalExaminationCardDetail" />
-          <EntitySet Name="MedicalRecords" EntityType="Self.MedicalRecord" />
           <EntitySet Name="Nurses" EntityType="Self.Nurse" />
           <EntitySet Name="Patients" EntityType="Self.Patient" />
           <EntitySet Name="Prescriptions" EntityType="Self.Prescription" />
           <EntitySet Name="Services" EntityType="Self.Service" />
+          <EntitySet Name="ServiceInvoices" EntityType="Self.ServiceInvoice" />
           <EntitySet Name="Users" EntityType="Self.User" />
           <AssociationSet Name="FK_Appointment_Doctor" Association="Self.FK_Appointment_Doctor">
             <End Role="Doctor" EntitySet="Doctors" />
@@ -910,13 +911,9 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="Doctor" EntitySet="Doctors" />
           </AssociationSet>
-          <AssociationSet Name="FK_MedicalExaminationCardDetail_Doctor" Association="Self.FK_MedicalExaminationCardDetail_Doctor">
+          <AssociationSet Name="FK_Prescription_Doctor" Association="Self.FK_Prescription_Doctor">
             <End Role="Doctor" EntitySet="Doctors" />
-            <End Role="MedicalExaminationCardDetail" EntitySet="MedicalExaminationCardDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MedicalRecord_Doctor" Association="Self.FK_MedicalRecord_Doctor">
-            <End Role="Doctor" EntitySet="Doctors" />
-            <End Role="MedicalRecord" EntitySet="MedicalRecords" />
+            <End Role="Prescription" EntitySet="Prescriptions" />
           </AssociationSet>
           <AssociationSet Name="FK_DrugDetail_Drug" Association="Self.FK_DrugDetail_Drug">
             <End Role="Drug" EntitySet="Drugs" />
@@ -925,6 +922,14 @@
           <AssociationSet Name="FK_DrugDetail_Prescription" Association="Self.FK_DrugDetail_Prescription">
             <End Role="Prescription" EntitySet="Prescriptions" />
             <End Role="DrugDetail" EntitySet="DrugDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invoice_Nurse" Association="Self.FK_Invoice_Nurse">
+            <End Role="Nurse" EntitySet="Nurses" />
+            <End Role="Invoice" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invoice_Patient" Association="Self.FK_Invoice_Patient">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="Invoice" EntitySet="Invoices" />
           </AssociationSet>
           <AssociationSet Name="FK_Invoice_Prescription" Association="Self.FK_Invoice_Prescription">
             <End Role="Prescription" EntitySet="Prescriptions" />
@@ -938,33 +943,33 @@
             <End Role="Medical" EntitySet="Medicals" />
             <End Role="Service" EntitySet="Services" />
           </AssociationSet>
-          <AssociationSet Name="FK_MedicalExaminationCardDetail_MedicalExaminationCard" Association="Self.FK_MedicalExaminationCardDetail_MedicalExaminationCard">
+          <AssociationSet Name="FK_MedicalExaminationCard_Nurse" Association="Self.FK_MedicalExaminationCard_Nurse">
+            <End Role="Nurse" EntitySet="Nurses" />
             <End Role="MedicalExaminationCard" EntitySet="MedicalExaminationCards" />
-            <End Role="MedicalExaminationCardDetail" EntitySet="MedicalExaminationCardDetails" />
           </AssociationSet>
-          <AssociationSet Name="FK_Patient_MedicalExaminationCard" Association="Self.FK_Patient_MedicalExaminationCard">
+          <AssociationSet Name="FK_MedicalExaminationCard_Patient" Association="Self.FK_MedicalExaminationCard_Patient">
+            <End Role="Patient" EntitySet="Patients" />
             <End Role="MedicalExaminationCard" EntitySet="MedicalExaminationCards" />
-            <End Role="Patient" EntitySet="Patients" />
-          </AssociationSet>
-          <AssociationSet Name="FK_MedicalRecord_Patient" Association="Self.FK_MedicalRecord_Patient">
-            <End Role="Patient" EntitySet="Patients" />
-            <End Role="MedicalRecord" EntitySet="MedicalRecords" />
           </AssociationSet>
           <AssociationSet Name="FK_Nurse_Users" Association="Self.FK_Nurse_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Nurse" EntitySet="Nurses" />
           </AssociationSet>
-          <AssociationSet Name="FK_Patient_Prescription" Association="Self.FK_Patient_Prescription">
+          <AssociationSet Name="FK_ServiceInvoice_Nurse" Association="Self.FK_ServiceInvoice_Nurse">
+            <End Role="Nurse" EntitySet="Nurses" />
+            <End Role="ServiceInvoice" EntitySet="ServiceInvoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prescription_Patient" Association="Self.FK_Prescription_Patient">
+            <End Role="Patient" EntitySet="Patients" />
             <End Role="Prescription" EntitySet="Prescriptions" />
-            <End Role="Patient" EntitySet="Patients" />
           </AssociationSet>
-          <AssociationSet Name="FK_Patient_Users" Association="Self.FK_Patient_Users">
-            <End Role="Users" EntitySet="Users" />
+          <AssociationSet Name="FK_ServiceInvoice_Patient" Association="Self.FK_ServiceInvoice_Patient">
             <End Role="Patient" EntitySet="Patients" />
+            <End Role="ServiceInvoice" EntitySet="ServiceInvoices" />
           </AssociationSet>
-          <AssociationSet Name="InvoiceDetail" Association="Self.InvoiceDetail">
-            <End Role="Invoice" EntitySet="Invoices" />
-            <End Role="Patient" EntitySet="Patients" />
+          <AssociationSet Name="FK_ServiceInvoice_Service" Association="Self.FK_ServiceInvoice_Service">
+            <End Role="Service" EntitySet="Services" />
+            <End Role="ServiceInvoice" EntitySet="ServiceInvoices" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -1029,6 +1034,8 @@
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="Fee" ColumnName="Fee" />
                 <ScalarProperty Name="PrescriptionID" ColumnName="PrescriptionID" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="NurseID" ColumnName="NurseID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1048,27 +1055,10 @@
                 <ScalarProperty Name="Num" ColumnName="Num" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Fee" ColumnName="Fee" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MedicalExaminationCardDetails">
-            <EntityTypeMapping TypeName="HospitalModel.MedicalExaminationCardDetail">
-              <MappingFragment StoreEntitySet="MedicalExaminationCardDetail">
-                <ScalarProperty Name="MedicalExaminationCardID" ColumnName="MedicalExaminationCardID" />
-                <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
                 <ScalarProperty Name="Symptom" ColumnName="Symptom" />
                 <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MedicalRecords">
-            <EntityTypeMapping TypeName="HospitalModel.MedicalRecord">
-              <MappingFragment StoreEntitySet="MedicalRecord">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="Expiry" ColumnName="Expiry" />
                 <ScalarProperty Name="PatientID" ColumnName="PatientID" />
-                <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
+                <ScalarProperty Name="NurseID" ColumnName="NurseID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1098,9 +1088,6 @@
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="PrescriptionID" ColumnName="PrescriptionID" />
-                <ScalarProperty Name="MedicalExaminationCardID" ColumnName="MedicalExaminationCardID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1110,6 +1097,7 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1122,24 +1110,28 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ServiceInvoices">
+            <EntityTypeMapping TypeName="HospitalModel.ServiceInvoice">
+              <MappingFragment StoreEntitySet="ServiceInvoice">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Fee" ColumnName="Fee" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="NurseID" ColumnName="NurseID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="HospitalModel.User">
               <MappingFragment StoreEntitySet="Users">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="RoleUser" ColumnName="RoleUser" />
+                <ScalarProperty Name="Role_User" ColumnName="Role_User" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="InvoiceDetail" TypeName="HospitalModel.InvoiceDetail" StoreEntitySet="InvoiceDetail">
-            <EndProperty Name="Invoice">
-              <ScalarProperty Name="ID" ColumnName="InvoiceID" />
-            </EndProperty>
-            <EndProperty Name="Patient">
-              <ScalarProperty Name="ID" ColumnName="PatientID" />
-            </EndProperty>
-          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

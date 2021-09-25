@@ -14,19 +14,15 @@ namespace AppHospital
     
     public partial class Invoice
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Invoice()
-        {
-            this.Patients = new HashSet<Patient>();
-        }
-    
         public int ID { get; set; }
-        public string CreatedDate { get; set; }
+        public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<int> Fee { get; set; }
         public Nullable<int> PrescriptionID { get; set; }
+        public Nullable<int> PatientID { get; set; }
+        public Nullable<int> NurseID { get; set; }
     
+        public virtual Nurse Nurse { get; set; }
+        public virtual Patient Patient { get; set; }
         public virtual Prescription Prescription { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Patient> Patients { get; set; }
     }
 }

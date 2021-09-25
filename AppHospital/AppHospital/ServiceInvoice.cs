@@ -12,15 +12,17 @@ namespace AppHospital
     using System;
     using System.Collections.Generic;
     
-    public partial class MedicalRecord
+    public partial class ServiceInvoice
     {
         public int ID { get; set; }
+        public Nullable<decimal> Fee { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
-        public Nullable<System.DateTime> Expiry { get; set; }
+        public Nullable<int> ServiceID { get; set; }
         public Nullable<int> PatientID { get; set; }
-        public Nullable<int> DoctorID { get; set; }
+        public Nullable<int> NurseID { get; set; }
     
-        public virtual Doctor Doctor { get; set; }
+        public virtual Nurse Nurse { get; set; }
         public virtual Patient Patient { get; set; }
+        public virtual Service Service { get; set; }
     }
 }

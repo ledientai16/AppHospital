@@ -14,21 +14,16 @@ namespace AppHospital
     
     public partial class MedicalExaminationCard
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MedicalExaminationCard()
-        {
-            this.MedicalExaminationCardDetails = new HashSet<MedicalExaminationCardDetail>();
-            this.Patients = new HashSet<Patient>();
-        }
-    
         public int ID { get; set; }
-        public string Num { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
-        public Nullable<int> Fee { get; set; }
+        public Nullable<int> Num { get; set; }
+        public System.DateTime Date { get; set; }
+        public Nullable<decimal> Fee { get; set; }
+        public string Symptom { get; set; }
+        public string Diagnosis { get; set; }
+        public Nullable<int> PatientID { get; set; }
+        public Nullable<int> NurseID { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MedicalExaminationCardDetail> MedicalExaminationCardDetails { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Patient> Patients { get; set; }
+        public virtual Nurse Nurse { get; set; }
+        public virtual Patient Patient { get; set; }
     }
 }

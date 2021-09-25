@@ -61,7 +61,7 @@ namespace AppHospital
                     
                     if (busMedicals.AddMedical(m))
                     {
-                        MessageBox.Show("Tạo sản phẩm thành công");
+                        MessageBox.Show("Tạo Chuyên khoa thành công");
                         busMedicals.GetAllMedical(gVMedical);
                         gVMedical.Rows[gVMedical.RowCount - 1].Selected = true;
                         gVMedical.CurrentCell = gVMedical.Rows[gVMedical.RowCount - 1].Cells[0];
@@ -74,6 +74,33 @@ namespace AppHospital
                 else MessageBox.Show("Hãy nhập đầy đủ!");
             }
             else MessageBox.Show("Hãy suy nghĩ kỹ càng hơn bạn nhé!");
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc muốn chỉnh sửa thông tin?", "Chỉnh sửa chuyên khoa", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (txtID.Text != "")
+                {
+                    Medical m = new Medical();
+                    m.ID = Int32.Parse(txtID.Text);
+                    m.Name = txtName.Text;
+                    m.Description = txtDescription.Text;
+                   
+
+                    if (busMedicals.EditMedical(m))
+                    {
+                        MessageBox.Show("Chỉnh sửa thành công");
+                        busMedicals.GetAllMedical(gVMedical);
+                        gVMedical.Rows[gVMedical.RowCount - 1].Selected = true;
+                        gVMedical.CurrentCell = gVMedical.Rows[gVMedical.RowCount - 1].Cells[0];
+                    }
+                    else MessageBox.Show("Chỉnh sửa thất bại");
+                }
+            }
+            else MessageBox.Show("Hãy chắc chắn khi bạn muốn sửa vào lần sau!");
         }
     }
 }

@@ -19,18 +19,18 @@ namespace AppHospital
         {
             this.DrugDetails = new HashSet<DrugDetail>();
             this.Invoices = new HashSet<Invoice>();
-            this.Patients = new HashSet<Patient>();
         }
     
         public int ID { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<int> DoctorID { get; set; }
+        public Nullable<int> PatientID { get; set; }
     
+        public virtual Doctor Doctor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DrugDetail> DrugDetails { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Invoice> Invoices { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Patient> Patients { get; set; }
+        public virtual Patient Patient { get; set; }
     }
 }

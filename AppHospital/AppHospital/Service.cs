@@ -14,10 +14,18 @@ namespace AppHospital
     
     public partial class Service
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Service()
+        {
+            this.ServiceInvoices = new HashSet<ServiceInvoice>();
+        }
+    
         public int ID { get; set; }
         public string Name { get; set; }
         public Nullable<int> MedicalID { get; set; }
     
         public virtual Medical Medical { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ServiceInvoice> ServiceInvoices { get; set; }
     }
 }

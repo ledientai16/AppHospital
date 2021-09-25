@@ -18,8 +18,7 @@ namespace AppHospital
         public Doctor()
         {
             this.Appointments = new HashSet<Appointment>();
-            this.MedicalExaminationCardDetails = new HashSet<MedicalExaminationCardDetail>();
-            this.MedicalRecords = new HashSet<MedicalRecord>();
+            this.Prescriptions = new HashSet<Prescription>();
         }
     
         public int ID { get; set; }
@@ -29,9 +28,9 @@ namespace AppHospital
         public string Gender { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-        public int YearsExperience { get; set; }
+        public Nullable<int> YearsExperience { get; set; }
         public string Image { get; set; }
-        public Nullable<int> MedicalID { get; set; }
+        public int MedicalID { get; set; }
         public Nullable<int> UserID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -39,8 +38,6 @@ namespace AppHospital
         public virtual Medical Medical { get; set; }
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MedicalExaminationCardDetail> MedicalExaminationCardDetails { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MedicalRecord> MedicalRecords { get; set; }
+        public virtual ICollection<Prescription> Prescriptions { get; set; }
     }
 }

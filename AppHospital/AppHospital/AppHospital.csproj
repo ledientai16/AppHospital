@@ -58,8 +58,16 @@
     <Compile Include="Appointment.cs">
       <DependentUpon>HospitalEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="BUS\BUS_Doctor.cs" />
     <Compile Include="BUS\BUS_Medicals.cs" />
+    <Compile Include="BUS\BUS_Nurse.cs" />
+    <Compile Include="BUS\BUS_Service.cs" />
+    <Compile Include="BUS\BUS_User.cs" />
+    <Compile Include="DAO\DAO_Doctor.cs" />
     <Compile Include="DAO\DAO_Medicals.cs" />
+    <Compile Include="DAO\DAO_Nurse.cs" />
+    <Compile Include="DAO\DAO_Service.cs" />
+    <Compile Include="DAO\DAO_User.cs" />
     <Compile Include="Doctor.cs">
       <DependentUpon>HospitalEntity.tt</DependentUpon>
     </Compile>
@@ -87,6 +95,12 @@
     <Compile Include="FormDoctorManager.Designer.cs">
       <DependentUpon>FormDoctorManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDrugManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDrugManager.Designer.cs">
+      <DependentUpon>FormDrugManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +112,24 @@
     </Compile>
     <Compile Include="FormMedicalManager.Designer.cs">
       <DependentUpon>FormMedicalManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNurseManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNurseManager.Designer.cs">
+      <DependentUpon>FormNurseManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormServiceManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormServiceManager.Designer.cs">
+      <DependentUpon>FormServiceManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUserManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUserManager.Designer.cs">
+      <DependentUpon>FormUserManager.cs</DependentUpon>
     </Compile>
     <Compile Include="HospitalEntity.Context.cs">
       <AutoGen>True</AutoGen>
@@ -123,12 +155,6 @@
     <Compile Include="MedicalExaminationCard.cs">
       <DependentUpon>HospitalEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="MedicalExaminationCardDetail.cs">
-      <DependentUpon>HospitalEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MedicalRecord.cs">
-      <DependentUpon>HospitalEntity.tt</DependentUpon>
-    </Compile>
     <Compile Include="Nurse.cs">
       <DependentUpon>HospitalEntity.tt</DependentUpon>
     </Compile>
@@ -141,6 +167,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service.cs">
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceInvoice.cs">
       <DependentUpon>HospitalEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
@@ -228,6 +257,5 @@
       <LastGenOutput>HospitalEntity.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

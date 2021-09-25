@@ -32,12 +32,11 @@ namespace AppHospital
         public virtual DbSet<Invoice> Invoices { get; set; }
         public virtual DbSet<Medical> Medicals { get; set; }
         public virtual DbSet<MedicalExaminationCard> MedicalExaminationCards { get; set; }
-        public virtual DbSet<MedicalExaminationCardDetail> MedicalExaminationCardDetails { get; set; }
-        public virtual DbSet<MedicalRecord> MedicalRecords { get; set; }
         public virtual DbSet<Nurse> Nurses { get; set; }
         public virtual DbSet<Patient> Patients { get; set; }
         public virtual DbSet<Prescription> Prescriptions { get; set; }
         public virtual DbSet<Service> Services { get; set; }
+        public virtual DbSet<ServiceInvoice> ServiceInvoices { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }
 }

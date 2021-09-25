@@ -18,8 +18,10 @@ namespace AppHospital
         public Patient()
         {
             this.Appointments = new HashSet<Appointment>();
-            this.MedicalRecords = new HashSet<MedicalRecord>();
             this.Invoices = new HashSet<Invoice>();
+            this.MedicalExaminationCards = new HashSet<MedicalExaminationCard>();
+            this.Prescriptions = new HashSet<Prescription>();
+            this.ServiceInvoices = new HashSet<ServiceInvoice>();
         }
     
         public int ID { get; set; }
@@ -29,18 +31,16 @@ namespace AppHospital
         public string Gender { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-        public Nullable<int> UserID { get; set; }
-        public Nullable<int> PrescriptionID { get; set; }
-        public Nullable<int> MedicalExaminationCardID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Appointment> Appointments { get; set; }
-        public virtual MedicalExaminationCard MedicalExaminationCard { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MedicalRecord> MedicalRecords { get; set; }
-        public virtual Prescription Prescription { get; set; }
-        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Invoice> Invoices { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MedicalExaminationCard> MedicalExaminationCards { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Prescription> Prescriptions { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ServiceInvoice> ServiceInvoices { get; set; }
     }
 }

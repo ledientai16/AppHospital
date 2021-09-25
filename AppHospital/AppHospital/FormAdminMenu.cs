@@ -95,5 +95,16 @@ namespace AppHospital
             openChildForm(new FormMedicalManager());
         }
 
+        private void btnNurseManager_Click(object sender, EventArgs e)
+        {
+            labelContent.Text = "Quản Lý Y tá";
+            openChildForm(new FormNurseManager());
+        }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            labelContent.Text = "Quản Lý User";
+            openChildForm(new FormUserManager());
+        }
     }
 }

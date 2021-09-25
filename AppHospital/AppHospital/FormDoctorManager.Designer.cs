@@ -29,157 +29,160 @@ namespace AppHospital
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.gVDoctor = new System.Windows.Forms.DataGridView();
+            this.groupbox1 = new System.Windows.Forms.GroupBox();
+            this.dateBirth = new System.Windows.Forms.DateTimePicker();
+            this.cbGender = new System.Windows.Forms.ComboBox();
+            this.cBMedical = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.button2 = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gVDoctor)).BeginInit();
+            this.groupbox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // gVDoctor
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gVDoctor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 261);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(991, 393);
-            this.dataGridView1.TabIndex = 0;
+            this.gVDoctor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gVDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gVDoctor.Location = new System.Drawing.Point(24, 261);
+            this.gVDoctor.Name = "gVDoctor";
+            this.gVDoctor.RowHeadersWidth = 62;
+            this.gVDoctor.RowTemplate.Height = 28;
+            this.gVDoctor.Size = new System.Drawing.Size(991, 393);
+            this.gVDoctor.TabIndex = 0;
+            this.gVDoctor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gVDoctor_CellClick);
             // 
-            // groupBox1
+            // groupbox1
             // 
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(2, 30);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(839, 180);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin";
+            this.groupbox1.Controls.Add(this.dateBirth);
+            this.groupbox1.Controls.Add(this.cbGender);
+            this.groupbox1.Controls.Add(this.cBMedical);
+            this.groupbox1.Controls.Add(this.label9);
+            this.groupbox1.Controls.Add(this.txtEmail);
+            this.groupbox1.Controls.Add(this.label7);
+            this.groupbox1.Controls.Add(this.txtPhone);
+            this.groupbox1.Controls.Add(this.label6);
+            this.groupbox1.Controls.Add(this.label5);
+            this.groupbox1.Controls.Add(this.label4);
+            this.groupbox1.Controls.Add(this.txtLastName);
+            this.groupbox1.Controls.Add(this.label3);
+            this.groupbox1.Controls.Add(this.txtFirstName);
+            this.groupbox1.Controls.Add(this.label2);
+            this.groupbox1.Controls.Add(this.txtID);
+            this.groupbox1.Controls.Add(this.label1);
+            this.groupbox1.Location = new System.Drawing.Point(2, 30);
+            this.groupbox1.Name = "groupbox1";
+            this.groupbox1.Size = new System.Drawing.Size(854, 180);
+            this.groupbox1.TabIndex = 4;
+            this.groupbox1.TabStop = false;
+            this.groupbox1.Text = "Thông tin";
             // 
-            // textBox8
+            // dateBirth
             // 
-            this.textBox8.Location = new System.Drawing.Point(599, 81);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(126, 26);
-            this.textBox8.TabIndex = 20;
+            this.dateBirth.Location = new System.Drawing.Point(347, 123);
+            this.dateBirth.Name = "dateBirth";
+            this.dateBirth.Size = new System.Drawing.Size(332, 26);
+            this.dateBirth.TabIndex = 24;
             // 
-            // label8
+            // cbGender
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(472, 81);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(131, 20);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Năm kinh nghiệm";
+            this.cbGender.FormattingEnabled = true;
+            this.cbGender.Location = new System.Drawing.Point(325, 78);
+            this.cbGender.Name = "cbGender";
+            this.cbGender.Size = new System.Drawing.Size(141, 28);
+            this.cbGender.TabIndex = 23;
             // 
-            // textBox7
+            // cBMedical
             // 
-            this.textBox7.Location = new System.Drawing.Point(530, 38);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(211, 26);
-            this.textBox7.TabIndex = 18;
+            this.cBMedical.FormattingEnabled = true;
+            this.cBMedical.Location = new System.Drawing.Point(580, 81);
+            this.cBMedical.Name = "cBMedical";
+            this.cBMedical.Size = new System.Drawing.Size(190, 28);
+            this.cBMedical.TabIndex = 22;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(472, 84);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(102, 20);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Chuyên khoa";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(597, 38);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(240, 26);
+            this.txtEmail.TabIndex = 18;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(481, 38);
+            this.label7.Location = new System.Drawing.Point(522, 41);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 20);
             this.label7.TabIndex = 17;
             this.label7.Text = "Email:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // textBox6
+            // txtPhone
             // 
-            this.textBox6.Location = new System.Drawing.Point(325, 117);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(141, 26);
-            this.textBox6.TabIndex = 16;
+            this.txtPhone.Location = new System.Drawing.Point(325, 35);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(141, 26);
+            this.txtPhone.TabIndex = 16;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(243, 120);
+            this.label6.Location = new System.Drawing.Point(242, 41);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 20);
             this.label6.TabIndex = 15;
             this.label6.Text = "Phone:";
             // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(325, 81);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(141, 26);
-            this.textBox5.TabIndex = 14;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(238, 84);
+            this.label5.Location = new System.Drawing.Point(234, 81);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 20);
             this.label5.TabIndex = 13;
             this.label5.Text = "Giới tính";
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(325, 38);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(141, 26);
-            this.textBox4.TabIndex = 12;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(234, 38);
+            this.label4.Location = new System.Drawing.Point(256, 123);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 20);
             this.label4.TabIndex = 11;
             this.label4.Text = "Ngày Sinh:";
             // 
-            // textBox3
+            // txtLastName
             // 
-            this.textBox3.Location = new System.Drawing.Point(52, 117);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(176, 26);
-            this.textBox3.TabIndex = 10;
+            this.txtLastName.Location = new System.Drawing.Point(52, 117);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(176, 26);
+            this.txtLastName.TabIndex = 10;
             // 
             // label3
             // 
@@ -190,12 +193,12 @@ namespace AppHospital
             this.label3.TabIndex = 9;
             this.label3.Text = "Tên:";
             // 
-            // textBox2
+            // txtFirstName
             // 
-            this.textBox2.Location = new System.Drawing.Point(52, 78);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(176, 26);
-            this.textBox2.TabIndex = 8;
+            this.txtFirstName.Location = new System.Drawing.Point(52, 78);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(176, 26);
+            this.txtFirstName.TabIndex = 8;
             // 
             // label2
             // 
@@ -206,12 +209,12 @@ namespace AppHospital
             this.label2.TabIndex = 7;
             this.label2.Text = "Họ:";
             // 
-            // textBox1
+            // txtID
             // 
-            this.textBox1.Location = new System.Drawing.Point(52, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(176, 26);
-            this.textBox1.TabIndex = 6;
+            this.txtID.Location = new System.Drawing.Point(52, 35);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(176, 26);
+            this.txtID.TabIndex = 6;
             // 
             // label1
             // 
@@ -249,6 +252,7 @@ namespace AppHospital
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -263,6 +267,7 @@ namespace AppHospital
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // FormDoctorManager
             // 
@@ -272,40 +277,41 @@ namespace AppHospital
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.groupbox1);
+            this.Controls.Add(this.gVDoctor);
             this.Name = "FormDoctorManager";
             this.Text = "FormDoctorManager";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Load += new System.EventHandler(this.FormDoctorManager_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gVDoctor)).EndInit();
+            this.groupbox1.ResumeLayout(false);
+            this.groupbox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView gVDoctor;
+        private System.Windows.Forms.GroupBox groupbox1;
         private System.Windows.Forms.Label label1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cBMedical;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cbGender;
+        private System.Windows.Forms.DateTimePicker dateBirth;
     }
 }

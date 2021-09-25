@@ -4,39 +4,39 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="05b0efcb38634c77a8710a7730e3e1b3" Name="Diagram1">
-        <EntityTypeShape EntityType="HospitalModel.Appointment" Width="1.5" PointX="7.5" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="HospitalModel.Doctor" Width="1.5" PointX="5.25" PointY="15.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="HospitalModel.Drug" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HospitalModel.DrugDetail" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="HospitalModel.Invoice" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HospitalModel.Medical" Width="1.5" PointX="3" PointY="16.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="HospitalModel.MedicalExaminationCard" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HospitalModel.MedicalExaminationCardDetail" Width="1.5" PointX="7.5" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="HospitalModel.MedicalRecord" Width="1.5" PointX="7.5" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="HospitalModel.Nurse" Width="1.5" PointX="5.25" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="HospitalModel.Patient" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="HospitalModel.Prescription" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="HospitalModel.Service" Width="1.5" PointX="5.25" PointY="20.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="HospitalModel.User" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+      <Diagram DiagramId="c9ad1fd95f5d437f84f8a46eab3c2eab" Name="Diagram1">
+        <EntityTypeShape EntityType="HospitalModel.Appointment" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Doctor" Width="1.5" PointX="0.75" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Drug" Width="1.5" PointX="3" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.DrugDetail" Width="1.5" PointX="5.25" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Invoice" Width="1.5" PointX="6" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Medical" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.MedicalExaminationCard" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Nurse" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Patient" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Prescription" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Service" Width="1.5" PointX="3.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.ServiceInvoice" Width="1.5" PointX="6" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.User" Width="1.5" PointX="1.5" PointY="17.625" IsExpanded="true" />
         <AssociationConnector Association="HospitalModel.FK_Appointment_Doctor" ManuallyRouted="false" />
         <AssociationConnector Association="HospitalModel.FK_Appointment_Patient" ManuallyRouted="false" />
         <AssociationConnector Association="HospitalModel.FK_Doctor_Medical" ManuallyRouted="false" />
         <AssociationConnector Association="HospitalModel.FK_Doctor_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="HospitalModel.FK_MedicalExaminationCardDetail_Doctor" ManuallyRouted="false" />
-        <AssociationConnector Association="HospitalModel.FK_MedicalRecord_Doctor" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_Prescription_Doctor" ManuallyRouted="false" />
         <AssociationConnector Association="HospitalModel.FK_DrugDetail_Drug" ManuallyRouted="false" />
         <AssociationConnector Association="HospitalModel.FK_DrugDetail_Prescription" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_Invoice_Nurse" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_Invoice_Patient" ManuallyRouted="false" />
         <AssociationConnector Association="HospitalModel.FK_Invoice_Prescription" ManuallyRouted="false" />
         <AssociationConnector Association="HospitalModel.FK_Nurse_Medical" ManuallyRouted="false" />
         <AssociationConnector Association="HospitalModel.FK_Service_Medical" ManuallyRouted="false" />
-        <AssociationConnector Association="HospitalModel.FK_MedicalExaminationCardDetail_MedicalExaminationCard" ManuallyRouted="false" />
-        <AssociationConnector Association="HospitalModel.FK_Patient_MedicalExaminationCard" ManuallyRouted="false" />
-        <AssociationConnector Association="HospitalModel.FK_MedicalRecord_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_MedicalExaminationCard_Nurse" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_MedicalExaminationCard_Patient" ManuallyRouted="false" />
         <AssociationConnector Association="HospitalModel.FK_Nurse_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="HospitalModel.FK_Patient_Prescription" ManuallyRouted="false" />
-        <AssociationConnector Association="HospitalModel.FK_Patient_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="HospitalModel.InvoiceDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_ServiceInvoice_Nurse" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_Prescription_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_ServiceInvoice_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_ServiceInvoice_Service" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -28,5 +28,28 @@ namespace AppHospital.DAO
             db.Medicals.Add(m);
             db.SaveChanges();
         }
+        public Medical GetMedicalByID(int id)
+        {
+            Medical m = db.Medicals.Where(s => s.ID == id).FirstOrDefault();
+            return m;
+        }
+        public bool CheckMedicalByID(int iD)
+        {
+            if (GetMedicalByID(iD) != null)
+                return true;
+            return false;
+        }
+        public void EditMedical(Medical m)
+        {
+            Medical m2 = new Medical();
+            m2 = this.GetMedicalByID(m.ID);
+
+            m2.Name = m.Name;
+            m2.Description = m.Description;
+           
+            db.SaveChanges();
+        }
+
+      
     }
 }
