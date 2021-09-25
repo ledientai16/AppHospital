@@ -61,5 +61,33 @@ namespace AppHospital.BUS
 
             return false;
         }
+
+        public bool DeleteMedical(int id)
+        {
+            if (dMedical.CheckMedicalByID(id))
+            {
+
+
+                try
+                {
+                    if (dMedical.DeleteMedical(id))
+                    {
+                        return true;
+                    }
+                    else
+                        MessageBox.Show("là khóa ngoại");
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+
+                } 
+                    
+
+            }
+            return false;
+        }
+        
     }
-}
+    }
+

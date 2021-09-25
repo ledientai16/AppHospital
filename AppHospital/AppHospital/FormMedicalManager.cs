@@ -102,5 +102,32 @@ namespace AppHospital
             }
             else MessageBox.Show("Hãy chắc chắn khi bạn muốn sửa vào lần sau!");
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc muốn xóa chuyên khoa?", "Xóa chuyên khoa", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (txtID.Text != "")
+                {
+                    int id = Int32.Parse(txtID.Text);
+                    if (busMedicals.DeleteMedical(id))
+                    {
+                        MessageBox.Show("Đã Xóa Thành Công!");
+                        busMedicals.GetAllMedical(gVMedical);
+
+                    }
+                    else MessageBox.Show("Đã có lỗi gì đó");
+                }
+                else MessageBox.Show("Hãy chọn sản phẩm muốn xóa");
+
+                //đặt về default
+                txtID.Text = "";
+                txtName.Text = "";
+                txtDescription.Text = "";
+            }
+            else MessageBox.Show("Hãy suy nghĩ kỹ càng hơn bạn nhé!");
+        }
     }
 }

@@ -50,6 +50,18 @@ namespace AppHospital.DAO
             db.SaveChanges();
         }
 
-      
+        public bool DeleteMedical(int id)
+        {
+
+            if (db.Doctors.Count(d => d.MedicalID == id) == 0)
+            {
+                db.Medicals.Remove(GetMedicalByID(id));
+                db.SaveChanges();
+                return true;
+            }
+            else return false;
+            
+        }
+        
     }
 }
