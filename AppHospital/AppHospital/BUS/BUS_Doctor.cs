@@ -34,5 +34,46 @@ namespace AppHospital.BUS
                 return false;
             }
         }
+
+        public bool DeleteDoctor(int id)
+        {
+            if (dDoctor.CheckDoctorByID(id))
+            {
+
+
+                try
+                {
+
+                    dDoctor.DeleteDoctor(id);
+                   return true;                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+
+                }
+
+
+            }
+            return false;
+        }
+
+        public bool EditDoctor(Doctor d)
+        {
+            if (dDoctor.CheckDoctorByID(d.ID))
+            {
+                try
+                {
+                    dDoctor.EditDoctor(d);
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+
+
+            }
+            return false;
+        }
     }
 }

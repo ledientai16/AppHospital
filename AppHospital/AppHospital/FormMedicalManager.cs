@@ -120,7 +120,7 @@ namespace AppHospital
                     }
                     else MessageBox.Show("Đã có lỗi gì đó");
                 }
-                else MessageBox.Show("Hãy chọn sản phẩm muốn xóa");
+                else MessageBox.Show("Hãy chọn chuyên khoa muốn xóa");
 
                 //đặt về default
                 txtID.Text = "";
