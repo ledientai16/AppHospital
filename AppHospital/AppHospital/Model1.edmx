@@ -881,7 +881,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="HospitalEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="HospitalEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Appointments" EntityType="Self.Appointment" />
           <EntitySet Name="Doctors" EntityType="Self.Doctor" />
           <EntitySet Name="Drugs" EntityType="Self.Drug" />
@@ -977,7 +977,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="HospitalModelStoreContainer" CdmEntityContainer="HospitalEntities">
+        <EntityContainerMapping StorageEntityContainer="HospitalModelStoreContainer" CdmEntityContainer="HospitalEntities1">
           <EntitySetMapping Name="Appointments">
             <EntityTypeMapping TypeName="HospitalModel.Appointment">
               <MappingFragment StoreEntitySet="Appointment">

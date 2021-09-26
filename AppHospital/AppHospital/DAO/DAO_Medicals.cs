@@ -8,10 +8,10 @@ namespace AppHospital.DAO
 {
     class DAO_Medicals
     {
-        HospitalEntities db;
+        HospitalEntities1 db;
         public DAO_Medicals()
         {
-            db = new HospitalEntities();
+            db = new HospitalEntities1();
         }
 
         public dynamic GetAllMedicals()
