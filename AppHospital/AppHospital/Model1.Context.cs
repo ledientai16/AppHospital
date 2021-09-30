@@ -37,6 +37,7 @@ namespace AppHospital
         public virtual DbSet<Prescription> Prescriptions { get; set; }
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<ServiceInvoice> ServiceInvoices { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }
 }

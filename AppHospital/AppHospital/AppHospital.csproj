@@ -172,6 +172,9 @@
     <Compile Include="ServiceInvoice.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -189,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormNurseManager.resx">
       <DependentUpon>FormNurseManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormServiceManager.resx">
+      <DependentUpon>FormServiceManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

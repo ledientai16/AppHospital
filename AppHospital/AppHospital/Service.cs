@@ -21,7 +21,9 @@ namespace AppHospital
         }
     
         public int ID { get; set; }
-        public string Name { get; set; }
+        public string NameService { get; set; }
+        public Nullable<decimal> Fee { get; set; }
+        public string Description { get; set; }
         public Nullable<int> MedicalID { get; set; }
     
         public virtual Medical Medical { get; set; }

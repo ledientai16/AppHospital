@@ -47,3 +47,4 @@ C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital
 C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.exe
 C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.pdb
 C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormNurseManager.resources
+C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormServiceManager.resources

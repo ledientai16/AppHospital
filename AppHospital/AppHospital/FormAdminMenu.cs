@@ -107,5 +107,11 @@ namespace AppHospital
             labelContent.Text = "Quản Lý User";
             openChildForm(new FormUserManager());
         }
+
+        private void btnService_Click(object sender, EventArgs e)
+        {
+            labelContent.Text = "Quản Lý Dịch Vụ";
+            openChildForm(new FormServiceManager());
+        }
     }
 }

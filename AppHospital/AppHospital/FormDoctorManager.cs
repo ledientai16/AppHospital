@@ -110,9 +110,6 @@ namespace AppHospital
                     d.Phone = txtPhone.Text;
                     d.BirthDate = dateBirth.Value;
                     d.Gender = cbGender.Text;
-                 
-
-                    
                     d.MedicalID = int.Parse(cBMedical.SelectedValue.ToString());
                     d.Email = txtEmail.Text;
 

@@ -120,7 +120,9 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameService" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fee" Type="decimal" Precision="18" Scale="3" />
+    <Property Name="Description" Type="nvarchar" MaxLength="4000" />
     <Property Name="MedicalID" Type="int" />
   </EntityType>
   <EntityType Name="ServiceInvoice">
@@ -133,6 +135,16 @@
     <Property Name="ServiceID" Type="int" />
     <Property Name="PatientID" Type="int" />
     <Property Name="NurseID" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
@@ -384,6 +396,7 @@
     <EntitySet Name="Prescription" EntityType="Self.Prescription" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ServiceInvoice" EntityType="Self.ServiceInvoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Appointment_Doctor" Association="Self.FK_Appointment_Doctor">
       <End Role="Doctor" EntitySet="Doctor" />
