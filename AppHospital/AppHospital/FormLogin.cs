@@ -13,7 +13,7 @@ namespace AppHospital
 {
     public partial class FormLogin : Form
     {
-        
+        public User user;
         BUS_User busUser;
         public FormLogin()
         {
@@ -32,6 +32,7 @@ namespace AppHospital
                  MessageBox.Show("Đăng nhập thành công");
                 FormAdminMenu f  =  new FormAdminMenu();
                 //truyen user cho admin
+
                 f.user = busUser.GetUser(txtUsername.Text, txtPassword.Text);
                 f.Show();
                 this.Hide();

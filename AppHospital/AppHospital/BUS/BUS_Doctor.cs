@@ -69,5 +69,9 @@ namespace AppHospital.BUS
             }
             return false;
         }
+        public Doctor GetDoctorByUser(int userID)
+        {
+            return dDoctor.GetDoctorByUser(userID);
+        }
     }
 }

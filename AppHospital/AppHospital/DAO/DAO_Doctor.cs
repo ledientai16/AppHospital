@@ -68,5 +68,10 @@ namespace AppHospital.DAO
             d2.Email = d.Email;
             db.SaveChanges();
         }
+
+        internal Doctor GetDoctorByUser(int userID)
+        {
+            return db.Doctors.Where(s => s.UserID == userID).FirstOrDefault();
+        }
     }
 }

@@ -13,7 +13,11 @@ namespace AppHospital
 {
     public partial class FormPrescriptionManager : Form
     {
+        public int presID;
+        public User user;
+        private Doctor doctor;
         BUS_Prescription busPrescription;
+        BUS_Patient busPatient;
         BUS_Doctor busDoctor;
         public FormPrescriptionManager()
         {
@@ -23,23 +27,36 @@ namespace AppHospital
 
         private void FormPrescriptionManager_Load(object sender, EventArgs e)
         {
-            GetAllPrescription();
-            busPrescription.GetListPatient(cbBN);
-            busPrescription.GetListDoctor(cbBS);
+            busDoctor = new BUS_Doctor();
+            busPrescription = new BUS_Prescription();
+            busPatient = new BUS_Patient();
+                doctor = busDoctor.GetDoctorByUser(user.ID);
+            GetAllPatient();
         }
+        private void GetAllPatient()
+        {
+            gVPatient.DataSource = null;
+            busPatient.GetAllPatients(gVPatient);
+            gVPatient.Columns[0].Width = (int)(gVPatient.Width * 0.1);
+            gVPatient.Columns[1].Width = (int)(gVPatient.Width * 0.15);
+            gVPatient.Columns[2].Width = (int)(gVPatient.Width * 0.15);
+            gVPatient.Columns[3].Width = (int)(gVPatient.Width * 0.15);
+            gVPatient.Columns[4].Width = (int)(gVPatient.Width * 0.15);
+            gVPatient.Columns[5].Width = (int)(gVPatient.Width * 0.15);
 
+
+        }
+    
         private void GetAllPrescription()
         {
             gVPre.DataSource = null;
-            busPrescription.GetAllPrescription(gVPre);
+            busPrescription.GetAllPrescription(gVPre,int.Parse(txtPatientID.Text));
             gVPre.Columns[0].Width = (int)(gVPre.Width * 0.1);
             gVPre.Columns[1].Width = (int)(gVPre.Width * 0.1);
             gVPre.Columns[2].Width = (int)(gVPre.Width * 0.2);
-            gVPre.Columns[3].Width = (int)(gVPre.Width * 0.2);
-            gVPre.Columns[0].HeaderText = "Mã toa";
-            gVPre.Columns[1].HeaderText = "Ngày tạo toa";
-            gVPre.Columns[2].HeaderText = "Tên bệnh nhân";
-            gVPre.Columns[3].HeaderText = "Tên bác sĩ";
+            gVPre.Columns[3].Width = (int)(gVPre.Width * 0.1);
+            gVPre.Columns[4].Width = (int)(gVPre.Width * 0.2);
+            gVPre.Columns[5].Width = (int)(gVPre.Width * 0.1);
 
         }
 
@@ -47,11 +64,13 @@ namespace AppHospital
         {
             if (e.RowIndex >= 0 && e.RowIndex < gVPre.Rows.Count)
             {
-                txtID.Enabled = false;
-                txtID.Text = gVPre.Rows[e.RowIndex].Cells["ID"].Value.ToString();
-                createdDate.Text = gVPre.Rows[e.RowIndex].Cells[1].Value.ToString();   
-                cbBN.Text = gVPre.Rows[e.RowIndex].Cells[2].Value.ToString();
-                cbBS.Text = gVPre.Rows[e.RowIndex].Cells[3].Value.ToString();
+               
+                txtID.Text = gVPre.Rows[e.RowIndex].Cells[0].Value.ToString();
+                createdDate.Text = gVPre.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txtPatientID.Text = gVPre.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txtDoctorID.Text = gVPre.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtDiagnosis.Text = gVPre.Rows[e.RowIndex].Cells[4].Value.ToString();
+                dateApointment.Value = (DateTime)gVPre.Rows[e.RowIndex].Cells[5].Value;
             }
         }
 
@@ -64,18 +83,21 @@ namespace AppHospital
                 {
 
                     Prescription d = new Prescription();
-                    d.ID = int.Parse(txtID.Text);
-
-                    d.CreatedDate = createdDate.Value;
-                    d.DoctorID = int.Parse(cbBS.SelectedValue.ToString());
-                    d.PatientID = int.Parse(cbBN.SelectedValue.ToString());
+                   
+                    d.DoctorID = doctor.ID;
+                    d.PatientID = int.Parse(txtPatientID.Text);
+                    d.Diagnosis = txtDiagnosis.Text;
+                    d.CreatedDate = DateTime.Now;
+                    d.Appointment = dateApointment.Value;
 
                     if (busPrescription.AddPrescription(d))
                     {
                         MessageBox.Show("thêm toa thuốc thành công");
-                        busPrescription.GetAllPrescription(gVPre);
+                        GetAllPrescription();
                         gVPre.Rows[gVPre.RowCount - 1].Selected = true;
                         gVPre.CurrentCell = gVPre.Rows[gVPre.RowCount - 1].Cells[0];
+                        showPresDetailForm();
+
                     }
                     else MessageBox.Show("Thêm toa thuốc thất bại");
 
@@ -92,21 +114,20 @@ namespace AppHospital
 
             if (dialogResult == DialogResult.Yes)
             {
-                if (checkInfo())
+                if (checkInfo() && txtID.Text == "")
                 {
 
                     Prescription d = new Prescription();
                     d.ID = int.Parse(txtID.Text);
 
-                    d.CreatedDate = createdDate.Value;
-                    d.DoctorID = int.Parse(cbBS.SelectedValue.ToString());
-                    d.PatientID = int.Parse(cbBN.SelectedValue.ToString());
+                    d.Appointment = dateApointment.Value;
+                    
 
                     if (busPrescription.EditPrescription(d))
                     {
                         MessageBox.Show("Chỉnh sửa thành công");
-                        busPrescription.GetAllPrescription(gVPre);
-
+                        GetAllPrescription();
+                       
                     }
                     else MessageBox.Show("Chỉnh sửa thất bại");
                 }
@@ -127,8 +148,7 @@ namespace AppHospital
                     if (busPrescription.DeletePrescription(id))
                     {
                         MessageBox.Show("Đã Xóa Thành Công!");
-                        busPrescription.GetAllPrescription(gVPre);
-
+                    
                     }
                     else MessageBox.Show("Đã có lỗi gì đó");
                 }
@@ -144,20 +164,45 @@ namespace AppHospital
         private bool checkInfo()
         {
 
-            if (txtID.Text == "" || createdDate.Text == "" || cbBN.Text == "" || cbBS.Text == "")
+            if (txtPatientID.Text == "" || txtDiagnosis.Text =="")
                 return false;
             return true;
         }
 
     
 
+       
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void gVPatient_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < gVPatient.Rows.Count)
+            {
+                txtPatientID.Text = gVPatient.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtDoctorID.Text = "";
+                GetAllPrescription();
+            }
+        }
+        private void showPresDetailForm()
+        {
+            int id = int.Parse(txtID.Text);
+            FormPrescriptionDetail f = new FormPrescriptionDetail();
+            f.presID = id;
+            f.doctorID = int.Parse(txtDoctorID.Text);
+            f.patiedID = int.Parse(txtPatientID.Text);
+            f.Show();
+        }
+
+        
+
         private void gVPre_DoubleClick(object sender, EventArgs e)
         {
-            int id;
-            id = int.Parse(gVPre.CurrentRow.Cells[0].Value.ToString());
-            FormDrugDetail f = new FormDrugDetail();
-            f.idDetail = id;
-            f.ShowDialog();
+            this.showPresDetailForm();
         }
     }
 }

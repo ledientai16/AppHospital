@@ -22,7 +22,12 @@ namespace AppHospital.BUS
             d.DataSource = dDrug.GetAllDrugs();
         }
 
-
+        public void GetAllDrugs(ComboBox cb)
+        {
+            cb.DataSource = dDrug.GetAllDrugs();
+            cb.DisplayMember = "Name";
+            cb.ValueMember = "ID";
+        }
         public bool AddDrug(Drug d)
         {
 
@@ -38,6 +43,10 @@ namespace AppHospital.BUS
             }
         }
 
+        internal Drug GetDrugByID(int id)
+        {
+            return dDrug.GetDrugByID(id);
+        }
 
         public bool EditDrug(Drug d)
         {

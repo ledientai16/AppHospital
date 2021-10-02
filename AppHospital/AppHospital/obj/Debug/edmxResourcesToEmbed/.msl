@@ -48,7 +48,6 @@
           <ScalarProperty Name="DrugID" ColumnName="DrugID" />
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
           <ScalarProperty Name="UserGuide" ColumnName="UserGuide" />
-          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -69,6 +68,20 @@
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MedicalExaminationCards">
+      <EntityTypeMapping TypeName="HospitalModel.MedicalExaminationCard">
+        <MappingFragment StoreEntitySet="MedicalExaminationCard">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Num" ColumnName="Num" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Fee" ColumnName="Fee" />
+          <ScalarProperty Name="Symptom" ColumnName="Symptom" />
+          <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="NurseID" ColumnName="NurseID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -109,8 +122,6 @@
           <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
           <ScalarProperty Name="PatientID" ColumnName="PatientID" />
           <ScalarProperty Name="Amount" ColumnName="Amount" />
-          <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
-          <ScalarProperty Name="Appointment" ColumnName="Appointment" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

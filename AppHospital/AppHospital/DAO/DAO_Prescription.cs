@@ -42,13 +42,25 @@ namespace AppHospital.DAO
             {
                 t.ID,
                 t.CreatedDate,
-                t.Patient.LastName,
-                t.Doctor.FirstName
+                t.PatientID,
+                t.DoctorID
 
             }).ToList();
             return d;
         }
-
+        public dynamic GetAllPrescription(int patientID)
+        {
+            var d = db.Prescriptions.Where(t => t.PatientID == patientID).Select(t => new
+            {
+                t.ID,
+                t.CreatedDate,
+                t.PatientID,
+                t.DoctorID,
+                t.Diagnosis,
+                t.Appointment
+            }).ToList();
+            return d;
+        }
         public void AddPrescription(Prescription d)
         {
             db.Prescriptions.Add(d);
@@ -74,9 +86,8 @@ namespace AppHospital.DAO
         {
             Prescription d2 = new Prescription();
             d2 = GetPrescriptionByID(d.ID);
-            d2.CreatedDate = d.CreatedDate;
-            d2.DoctorID = d.DoctorID;
-            d2.PatientID = d.PatientID;
+            d2.Diagnosis = d.Diagnosis;
+            d2.Appointment = d.Appointment;
             db.SaveChanges();
         }
 

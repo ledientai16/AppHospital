@@ -17,9 +17,9 @@ namespace AppHospital.BUS
             dPrescription = new DAO_Prescription();
         }
 
-        public void GetAllPrescription(DataGridView d)
+        public void GetAllPrescription(DataGridView d, int patientID)
         {
-            d.DataSource = dPrescription.GetAllPrescription();
+            d.DataSource = dPrescription.GetAllPrescription(patientID);
         }
 
         public void GetListPatient(ComboBox cb)
@@ -27,8 +27,6 @@ namespace AppHospital.BUS
             cb.DataSource = dPrescription.GetListPatient();
             cb.DisplayMember = "LastName";
             cb.ValueMember = "ID";
-            
-
         }
         public void GetListDoctor(ComboBox cb)
         {
@@ -70,7 +68,7 @@ namespace AppHospital.BUS
             return false;
         }
 
-
+        
 
         public bool DeletePrescription(int id)
         {

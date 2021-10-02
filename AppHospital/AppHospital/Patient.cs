@@ -18,8 +18,6 @@ namespace AppHospital
         public Patient()
         {
             this.Appointments = new HashSet<Appointment>();
-            this.Invoices = new HashSet<Invoice>();
-            this.MedicalExaminationCards = new HashSet<MedicalExaminationCard>();
             this.Prescriptions = new HashSet<Prescription>();
             this.ServiceInvoices = new HashSet<ServiceInvoice>();
         }
@@ -34,10 +32,6 @@ namespace AppHospital
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Appointment> Appointments { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Invoice> Invoices { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MedicalExaminationCard> MedicalExaminationCards { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Prescription> Prescriptions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

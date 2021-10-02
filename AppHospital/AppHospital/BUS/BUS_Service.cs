@@ -19,6 +19,12 @@ namespace AppHospital.BUS
         {
             d.DataSource = daoService.getAllService();
         }
+        public void GetAllService(ComboBox cb)
+        {
+            cb.DataSource = daoService.getAllService();
+            cb.DisplayMember = "Name";
+            cb.ValueMember = "ID";
+        }
         public bool addService(Service s)
         {
             try
@@ -72,6 +78,11 @@ namespace AppHospital.BUS
             }
             return false;
 
+        }
+
+        public Service GetServiceByID(int id)
+        {
+            return daoService.GetServicebyID(id);
         }
     }
 }

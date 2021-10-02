@@ -17,9 +17,9 @@ namespace AppHospital.BUS
             dDeltail = new DAO_DrugDetail();
         }
 
-        public void GetAllDrugDetail(DataGridView d)
+        public void GetAllDrugDetail(DataGridView d, int presID)
         {
-            d.DataSource = dDeltail.GetAllDrugDetail();
+            d.DataSource = dDeltail.GetAllDrugDetail(presID);
         }
 
 
@@ -84,7 +84,36 @@ namespace AppHospital.BUS
             return false;
         }
 
-
-
+        public bool Update(DrugDetail d)
+        {
+            
+            if(dDeltail.CheckDrugDetailByID(d.PrescriptionID, d.DrugID) == false)
+            {
+                try
+                {
+                    dDeltail.AddDrugDetail(d);
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                    return false;
+                }
+            }
+            else
+            {
+                try
+                {
+                    dDeltail.EditDrugDetail(d);
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                    return false;
+                }
+            }
+            
+        }
     }
 }

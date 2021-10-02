@@ -18,6 +18,30 @@ namespace AppHospital
             InitializeComponent();
             DesignByRole();
         }
+        public void Authorization()
+        {
+            if (!user.Role_User.Equals("ROLE_ADMIN"))
+            {
+
+                btnUser.Visible = false;
+                btnDoctorManagerment.Visible = false;
+                btnNurseManager.Visible = false;
+                btnDoctorManagerment.Visible = false;
+                btnMedical.Visible = false;
+                
+            }
+            if (!user.Role_User.Equals("ROLE_Nurse"))
+            {
+                btnServiceInvoice.Visible = false;
+            }
+            if (!user.Role_User.Equals("ROLE_Doctor"))
+            {
+                btnDoctorManagerment.Visible = false;
+            }
+
+        }
+        
+
         private void DesignByRole()
         {
             panelInternalManager.Visible = false;
@@ -137,6 +161,25 @@ namespace AppHospital
             FormServiceInvoice f = new FormServiceInvoice();
             f.user = this.user;
             openChildForm(f);
+        }
+
+        private void btnPantient_Click(object sender, EventArgs e)
+        {
+            FormPatientManager f = new FormPatientManager();
+            f.user = this.user;
+            openChildForm(f);
+        }
+
+        private void btnPres_Click(object sender, EventArgs e)
+        {
+            FormPrescriptionManager f = new FormPrescriptionManager();
+            f.user = this.user;
+            openChildForm(f);
+        }
+
+        private void panelChildForm_Paint(object sender, PaintEventArgs e)
+        {
+            Authorization();
         }
     }
 }

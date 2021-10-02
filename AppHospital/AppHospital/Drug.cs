@@ -22,7 +22,7 @@ namespace AppHospital
     
         public int ID { get; set; }
         public string Name { get; set; }
-        public string UnitPrice { get; set; }
+        public Nullable<decimal> UnitPrice { get; set; }
         public Nullable<int> Quantity { get; set; }
         public Nullable<System.DateTime> Expiry { get; set; }
         public Nullable<System.DateTime> Manufacturer { get; set; }

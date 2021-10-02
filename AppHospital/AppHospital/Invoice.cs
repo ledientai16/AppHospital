@@ -16,13 +16,11 @@ namespace AppHospital
     {
         public int ID { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
-        public Nullable<int> Fee { get; set; }
+        public Nullable<decimal> Fee { get; set; }
         public Nullable<int> PrescriptionID { get; set; }
-        public Nullable<int> PatientID { get; set; }
         public Nullable<int> NurseID { get; set; }
     
         public virtual Nurse Nurse { get; set; }
-        public virtual Patient Patient { get; set; }
         public virtual Prescription Prescription { get; set; }
     }
 }

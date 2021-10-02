@@ -18,6 +18,7 @@ namespace AppHospital
         public int DrugID { get; set; }
         public Nullable<int> Quantity { get; set; }
         public string UserGuide { get; set; }
+        public Nullable<decimal> UnitPrice { get; set; }
     
         public virtual Drug Drug { get; set; }
         public virtual Prescription Prescription { get; set; }

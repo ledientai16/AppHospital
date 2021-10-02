@@ -41,7 +41,7 @@ namespace AppHospital.BUS
         {
             d.DataSource = dPatient.GetPatients(name);
         }
-
+        
         public bool DeletePatient(int id)
         {
             if (dPatient.CheckPatientByID(id))

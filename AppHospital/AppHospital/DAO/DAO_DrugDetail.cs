@@ -28,15 +28,16 @@ namespace AppHospital.DAO
       
 
 
-        public dynamic GetAllDrugDetail()
+        public dynamic GetAllDrugDetail(int presId)
         {
-            var d = db.DrugDetails.Select(t => new
+            var d = db.DrugDetails.Where(s => s.PrescriptionID == presId).Select(t => new
             {
+                t.DrugID,
                 t.Drug.Name,
                 t.PrescriptionID,
                 t.Quantity,
-                t.UserGuide
-
+                t.UserGuide,
+                t.UnitPrice
             }).ToList();
             return d;
         }
@@ -71,6 +72,7 @@ namespace AppHospital.DAO
             d2.DrugID = d.DrugID;
             d2.UserGuide = d.UserGuide;
             d2.Quantity = d.Quantity;
+            d2.UnitPrice = d.UnitPrice;
             db.SaveChanges();
         }
 

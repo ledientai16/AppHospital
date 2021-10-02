@@ -13,6 +13,7 @@ namespace AppHospital
 {
     public partial class FormPatientManager : Form
     {
+        public User user;
         BUS_Patient busPatient;
         public FormPatientManager()
         {

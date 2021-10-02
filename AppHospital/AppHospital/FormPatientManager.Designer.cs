@@ -66,7 +66,7 @@ namespace AppHospital
             this.gVPatient.Name = "gVPatient";
             this.gVPatient.RowHeadersWidth = 62;
             this.gVPatient.RowTemplate.Height = 28;
-            this.gVPatient.Size = new System.Drawing.Size(768, 392);
+            this.gVPatient.Size = new System.Drawing.Size(1024, 392);
             this.gVPatient.TabIndex = 0;
             this.gVPatient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gVPatient_CellClick);
             // 
@@ -280,7 +280,7 @@ namespace AppHospital
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1052, 666);
+            this.ClientSize = new System.Drawing.Size(1060, 666);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);

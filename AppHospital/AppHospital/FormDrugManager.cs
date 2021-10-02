@@ -66,10 +66,10 @@ namespace AppHospital
                 {
 
                     Drug d = new Drug();
-                    d.ID = int.Parse(txtID.Text);
+                   
 
                     d.Name = txtName.Text;
-                    d.UnitPrice = txtPrice.Text;
+                    d.UnitPrice = decimal.Parse(txtPrice.Text);
                     d.Quantity = int.Parse (txtQuantity.Text);
                     d.Expiry = dateExpiry.Value;
                     d.Manufacturer = dateManufature.Value;
@@ -111,7 +111,7 @@ namespace AppHospital
 
                     Drug d = new Drug();
                     d.Name = txtName.Text;
-                    d.UnitPrice = txtPrice.Text;
+                    d.UnitPrice = decimal.Parse(txtPrice.Text);
                     d.Quantity = int.Parse(txtQuantity.Text);
                     d.Expiry = dateExpiry.Value;
                     d.Manufacturer = dateManufature.Value;

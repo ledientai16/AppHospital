@@ -77,3 +77,30 @@ D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.Form
 D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormUserManager.resources
 D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormUserProfile.resources
 D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormServiceInvoice.resources
+D:\###\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.csprojAssemblyReference.cache
+D:\###\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormAdminMenu.resources
+D:\###\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormDoctorManager.resources
+D:\###\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormDrugManager.resources
+D:\###\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormLogin.resources
+D:\###\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormMedicalManager.resources
+D:\###\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormNurseManager.resources
+D:\###\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormPatientManager.resources
+D:\###\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormPrescriptionManager.resources
+D:\###\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormServiceInvoice.resources
+D:\###\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormServiceManager.resources
+D:\###\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormUserManager.resources
+D:\###\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormUserProfile.resources
+D:\###\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.Properties.Resources.resources
+D:\###\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.csproj.GenerateResource.cache
+D:\###\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.csproj.CoreCompileInputs.cache
+D:\###\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.exe
+D:\###\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.pdb
+D:\###\AppHospital\AppHospital\AppHospital\bin\Debug\AppHospital.exe.config
+D:\###\AppHospital\AppHospital\AppHospital\bin\Debug\AppHospital.exe
+D:\###\AppHospital\AppHospital\AppHospital\bin\Debug\AppHospital.pdb
+D:\###\AppHospital\AppHospital\AppHospital\bin\Debug\EntityFramework.dll
+D:\###\AppHospital\AppHospital\AppHospital\bin\Debug\EntityFramework.SqlServer.dll
+D:\###\AppHospital\AppHospital\AppHospital\bin\Debug\EntityFramework.xml
+D:\###\AppHospital\AppHospital\AppHospital\bin\Debug\EntityFramework.SqlServer.xml
+D:\###\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.csproj.CopyComplete
+D:\###\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormPrescriptionDetail.resources

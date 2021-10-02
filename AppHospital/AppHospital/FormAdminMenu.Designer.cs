@@ -32,13 +32,10 @@ namespace AppHospital
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdminMenu));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelPatient = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.btnPres = new System.Windows.Forms.Button();
             this.btnPantient = new System.Windows.Forms.Button();
             this.btnPatient = new System.Windows.Forms.Button();
             this.panelMoney = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.btnServiceInvoice = new System.Windows.Forms.Button();
             this.btnMoney = new System.Windows.Forms.Button();
             this.panelInternalManager = new System.Windows.Forms.Panel();
@@ -89,8 +86,7 @@ namespace AppHospital
             // panelPatient
             // 
             this.panelPatient.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panelPatient.Controls.Add(this.button9);
-            this.panelPatient.Controls.Add(this.button10);
+            this.panelPatient.Controls.Add(this.btnPres);
             this.panelPatient.Controls.Add(this.btnPantient);
             this.panelPatient.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelPatient.Location = new System.Drawing.Point(0, 933);
@@ -98,34 +94,25 @@ namespace AppHospital
             this.panelPatient.Size = new System.Drawing.Size(271, 210);
             this.panelPatient.TabIndex = 8;
             // 
-            // button9
+            // btnPres
             // 
-            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Location = new System.Drawing.Point(0, 80);
-            this.button9.Name = "button9";
-            this.button9.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button9.Size = new System.Drawing.Size(271, 40);
-            this.button9.TabIndex = 2;
-            this.button9.Text = "Toa thuốc";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Location = new System.Drawing.Point(0, 40);
-            this.button10.Name = "button10";
-            this.button10.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button10.Size = new System.Drawing.Size(271, 40);
-            this.button10.TabIndex = 1;
-            this.button10.Text = "Hồ sơ bệnh án";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnPres.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPres.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPres.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPres.Location = new System.Drawing.Point(0, 40);
+            this.btnPres.Name = "btnPres";
+            this.btnPres.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnPres.Size = new System.Drawing.Size(271, 40);
+            this.btnPres.TabIndex = 1;
+            this.btnPres.Text = "Lập toa thuốc";
+            this.btnPres.UseVisualStyleBackColor = true;
+            this.btnPres.Click += new System.EventHandler(this.btnPres_Click);
             // 
             // btnPantient
             // 
             this.btnPantient.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPantient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPantient.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnPantient.Location = new System.Drawing.Point(0, 0);
             this.btnPantient.Name = "btnPantient";
             this.btnPantient.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -133,6 +120,7 @@ namespace AppHospital
             this.btnPantient.TabIndex = 0;
             this.btnPantient.Text = "Danh sách bệnh nhân";
             this.btnPantient.UseVisualStyleBackColor = true;
+            this.btnPantient.Click += new System.EventHandler(this.btnPantient_Click);
             // 
             // btnPatient
             // 
@@ -158,40 +146,12 @@ namespace AppHospital
             // panelMoney
             // 
             this.panelMoney.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panelMoney.Controls.Add(this.button5);
-            this.panelMoney.Controls.Add(this.button6);
             this.panelMoney.Controls.Add(this.btnServiceInvoice);
             this.panelMoney.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMoney.Location = new System.Drawing.Point(0, 658);
             this.panelMoney.Name = "panelMoney";
             this.panelMoney.Size = new System.Drawing.Size(271, 157);
             this.panelMoney.TabIndex = 6;
-            // 
-            // button5
-            // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button5.Location = new System.Drawing.Point(0, 80);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(271, 40);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button6.Location = new System.Drawing.Point(0, 40);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(271, 40);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
             // 
             // btnServiceInvoice
             // 
@@ -203,7 +163,7 @@ namespace AppHospital
             this.btnServiceInvoice.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnServiceInvoice.Size = new System.Drawing.Size(271, 40);
             this.btnServiceInvoice.TabIndex = 0;
-            this.btnServiceInvoice.Text = "Hóa Đơn";
+            this.btnServiceInvoice.Text = "Hóa Đơn Dịch vụ";
             this.btnServiceInvoice.UseVisualStyleBackColor = true;
             this.btnServiceInvoice.Click += new System.EventHandler(this.btnServiceInvoice_Click);
             // 
@@ -419,6 +379,7 @@ namespace AppHospital
             this.panelChildForm.Name = "panelChildForm";
             this.panelChildForm.Size = new System.Drawing.Size(785, 976);
             this.panelChildForm.TabIndex = 2;
+            this.panelChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChildForm_Paint);
             // 
             // btnHiddenMenu
             // 
@@ -500,12 +461,9 @@ namespace AppHospital
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Username;
         private System.Windows.Forms.Panel panelMoney;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btnServiceInvoice;
         private System.Windows.Forms.Panel panelPatient;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btnPres;
         private System.Windows.Forms.Button btnPantient;
         private System.Windows.Forms.Button btnPatient;
         private System.Windows.Forms.Label label3;
