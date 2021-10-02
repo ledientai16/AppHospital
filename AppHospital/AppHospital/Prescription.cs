@@ -25,6 +25,7 @@ namespace AppHospital
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<int> DoctorID { get; set; }
         public Nullable<int> PatientID { get; set; }
+        public Nullable<decimal> Amount { get; set; }
     
         public virtual Doctor Doctor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

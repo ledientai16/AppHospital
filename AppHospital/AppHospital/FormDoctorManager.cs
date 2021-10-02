@@ -25,8 +25,8 @@ namespace AppHospital
         {
             GetAllDoctors();
             busMedicals.GetAllMedical(cBMedical);
-            cbGender.Text = "nam";
-        }
+            cbGender.Text = "nữ";
+            }
 
         private void GetAllDoctors()
         {
@@ -76,6 +76,9 @@ namespace AppHospital
                     d.Gender = cbGender.Text;
                     d.MedicalID = int.Parse(cBMedical.SelectedValue.ToString());
                     d.Email = txtEmail.Text;
+
+
+
                     if (busDoctor.EditDoctor(d))
                     {
                         MessageBox.Show("Chỉnh sửa thành công");
@@ -96,7 +99,7 @@ namespace AppHospital
                 return false;
             return true;
         }
-        private void btnAdd_Click(object sender, EventArgs e)
+    private void btnAdd_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc muốn thêm bác sỉ?", "Thêm bác sỉ", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
@@ -110,6 +113,9 @@ namespace AppHospital
                     d.Phone = txtPhone.Text;
                     d.BirthDate = dateBirth.Value;
                     d.Gender = cbGender.Text;
+                 
+
+                    
                     d.MedicalID = int.Parse(cBMedical.SelectedValue.ToString());
                     d.Email = txtEmail.Text;
 

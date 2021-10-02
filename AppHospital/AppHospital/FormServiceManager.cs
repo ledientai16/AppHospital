@@ -53,7 +53,7 @@ namespace AppHospital
                 {
 
                     Service s = new Service();
-                    s.NameService = txtName.Text;
+                    s.Name = txtName.Text;
                     s.Description = txtDescription.Text;
                     s.Fee = int.Parse(txtPrice.Text);
                     s.MedicalID = int.Parse(cbMedical.SelectedValue.ToString());
@@ -128,7 +128,7 @@ namespace AppHospital
                 {
                     Service sv = new Service();
                     sv.ID = int.Parse(txtID.Text);
-                    sv.NameService = txtName.Text;
+                    sv.Name = txtName.Text;
                     sv.Description = txtDescription.Text;
                     sv.Fee = int.Parse(txtPrice.Text);
                     sv.MedicalID = int.Parse(cbMedical.SelectedValue.ToString());

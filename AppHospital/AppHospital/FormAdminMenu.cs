@@ -12,12 +12,13 @@ namespace AppHospital
 {
     public partial class FormAdminMenu : Form
     {
+        public User user;
         public FormAdminMenu()
         {
             InitializeComponent();
-            CustomizeDesing();
+            DesignByRole();
         }
-        private void CustomizeDesing()
+        private void DesignByRole()
         {
             panelInternalManager.Visible = false;
             panelPatient.Visible = false;
@@ -81,6 +82,17 @@ namespace AppHospital
             childForm.Show();
 
         }
+        //thu nho panel
+        private void ActiveMenuPanel()
+        {
+            if (panelMenu.Visible == false)
+                panelMenu.Visible = true;
+            else panelMenu.Visible = false;
+        }
+        private void btnHiddenMenu_Click(object sender, EventArgs e)
+        {
+            ActiveMenuPanel();
+        }
 
         //gọi form
         private void btnDoctorManagerment_Click(object sender, EventArgs e)
@@ -107,11 +119,24 @@ namespace AppHospital
             labelContent.Text = "Quản Lý User";
             openChildForm(new FormUserManager());
         }
-
         private void btnService_Click(object sender, EventArgs e)
         {
             labelContent.Text = "Quản Lý Dịch Vụ";
             openChildForm(new FormServiceManager());
+        }
+        private void btnDrug_Click(object sender, EventArgs e)
+        {
+
+            labelContent.Text = "Quản Lý Dịch Vụ";
+            openChildForm(new FormDrugManager());
+        }
+        
+
+        private void btnServiceInvoice_Click(object sender, EventArgs e)
+        {
+            FormServiceInvoice f = new FormServiceInvoice();
+            f.user = this.user;
+            openChildForm(f);
         }
     }
 }

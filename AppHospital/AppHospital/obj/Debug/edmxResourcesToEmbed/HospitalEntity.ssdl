@@ -7,7 +7,7 @@
     </Key>
     <Property Name="DoctorID" Type="int" Nullable="false" />
     <Property Name="PatientID" Type="int" Nullable="false" />
-    <Property Name="AppointmentDate" Type="date" />
+    <Property Name="AppointmentDate" Type="datetime" />
     <Property Name="Description" Type="varchar" MaxLength="256" />
   </EntityType>
   <EntityType Name="Doctor">
@@ -36,6 +36,7 @@
     <Property Name="Quantity" Type="int" />
     <Property Name="Expiry" Type="date" />
     <Property Name="Manufacturer" Type="date" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="DrugDetail">
     <Key>
@@ -114,6 +115,7 @@
     <Property Name="CreatedDate" Type="date" />
     <Property Name="DoctorID" Type="int" />
     <Property Name="PatientID" Type="int" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="Service">
     <Key>
@@ -122,26 +124,40 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
     <Property Name="MedicalID" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Fee" Type="decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="ServiceInvoice">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Fee" Type="decimal" Precision="18" Scale="3" />
-    <Property Name="CreatedDate" Type="date" />
+    <Property Name="Fee" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="CreatedDate" Type="datetime" />
     <Property Name="ServiceID" Type="int" />
     <Property Name="PatientID" Type="int" />
     <Property Name="NurseID" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
-    <Property Name="Name" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="45" Nullable="false" />
     <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="Role_User" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Role_User" Type="nchar" MaxLength="15" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
   </EntityType>
   <Association Name="FK_Appointment_Doctor">
     <End Role="Doctor" Type="Self.Doctor" Multiplicity="1" />
@@ -371,6 +387,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="userLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="username" Type="nvarchar" Mode="In" />
+    <Parameter Name="password" Type="nvarchar" Mode="In" />
+  </Function>
   <EntityContainer Name="HospitalModelStoreContainer">
     <EntitySet Name="Appointment" EntityType="Self.Appointment" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Doctor" EntityType="Self.Doctor" Schema="dbo" store:Type="Tables" />
@@ -384,6 +404,7 @@
     <EntitySet Name="Prescription" EntityType="Self.Prescription" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ServiceInvoice" EntityType="Self.ServiceInvoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Appointment_Doctor" Association="Self.FK_Appointment_Doctor">
       <End Role="Doctor" EntitySet="Doctor" />

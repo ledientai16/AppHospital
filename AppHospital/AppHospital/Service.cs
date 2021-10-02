@@ -21,10 +21,10 @@ namespace AppHospital
         }
     
         public int ID { get; set; }
-        public string NameService { get; set; }
-        public Nullable<decimal> Fee { get; set; }
-        public string Description { get; set; }
+        public string Name { get; set; }
         public Nullable<int> MedicalID { get; set; }
+        public string Description { get; set; }
+        public Nullable<decimal> Fee { get; set; }
     
         public virtual Medical Medical { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

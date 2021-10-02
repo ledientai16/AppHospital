@@ -28,23 +28,52 @@ C:\Users\Admin\Desktop\AppHospital\AppHospital\AppHospital\bin\Debug\EntityFrame
 C:\Users\Admin\Desktop\AppHospital\AppHospital\AppHospital\bin\Debug\EntityFramework.xml
 C:\Users\Admin\Desktop\AppHospital\AppHospital\AppHospital\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Admin\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.csproj.CopyComplete
-C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\bin\Debug\AppHospital.exe.config
-C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\bin\Debug\AppHospital.exe
-C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\bin\Debug\AppHospital.pdb
-C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\bin\Debug\EntityFramework.dll
-C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\bin\Debug\EntityFramework.xml
-C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.csproj.AssemblyReference.cache
-C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormAdminMenu.resources
-C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormDoctorManager.resources
-C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormLogin.resources
-C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormMedicalManager.resources
-C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.Properties.Resources.resources
-C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.csproj.GenerateResource.cache
-C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.csproj.CoreCompileInputs.cache
-C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.csproj.CopyComplete
-C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.exe
-C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.pdb
-C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormNurseManager.resources
-C:\Users\ledat\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormServiceManager.resources
+C:\Users\macth\Desktop\AppHospital\AppHospital\AppHospital\bin\Debug\AppHospital.exe.config
+C:\Users\macth\Desktop\AppHospital\AppHospital\AppHospital\bin\Debug\AppHospital.exe
+C:\Users\macth\Desktop\AppHospital\AppHospital\AppHospital\bin\Debug\AppHospital.pdb
+C:\Users\macth\Desktop\AppHospital\AppHospital\AppHospital\bin\Debug\EntityFramework.dll
+C:\Users\macth\Desktop\AppHospital\AppHospital\AppHospital\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\macth\Desktop\AppHospital\AppHospital\AppHospital\bin\Debug\EntityFramework.xml
+C:\Users\macth\Desktop\AppHospital\AppHospital\AppHospital\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\macth\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.csproj.AssemblyReference.cache
+C:\Users\macth\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormAdminMenu.resources
+C:\Users\macth\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormDoctorManager.resources
+C:\Users\macth\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormLogin.resources
+C:\Users\macth\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormMedicalManager.resources
+C:\Users\macth\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.Properties.Resources.resources
+C:\Users\macth\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.csproj.GenerateResource.cache
+C:\Users\macth\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.csproj.CoreCompileInputs.cache
+C:\Users\macth\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.csproj.CopyComplete
+C:\Users\macth\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.exe
+C:\Users\macth\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.pdb
+C:\Users\macth\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormDrugManager.resources
+C:\Users\macth\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormPatientManager.resources
+C:\Users\macth\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormPrescriptionManager.resources
+C:\Users\macth\Desktop\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormDrugDetail.resources
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.csprojAssemblyReference.cache
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormAdminMenu.resources
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormDoctorManager.resources
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormDrugDetail.resources
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormDrugManager.resources
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormLogin.resources
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormMedicalManager.resources
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormPatientManager.resources
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormPrescriptionManager.resources
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.Properties.Resources.resources
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.csproj.GenerateResource.cache
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.csproj.CoreCompileInputs.cache
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.exe
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.pdb
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\bin\Debug\AppHospital.exe.config
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\bin\Debug\AppHospital.exe
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\bin\Debug\AppHospital.pdb
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\bin\Debug\EntityFramework.dll
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\bin\Debug\EntityFramework.SqlServer.dll
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\bin\Debug\EntityFramework.xml
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\bin\Debug\EntityFramework.SqlServer.xml
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.csproj.CopyComplete
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormNurseManager.resources
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormServiceManager.resources
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormUserManager.resources
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormUserProfile.resources
+D:\###LTCSDL_ BTL\AppHospital\AppHospital\AppHospital\obj\Debug\AppHospital.FormServiceInvoice.resources

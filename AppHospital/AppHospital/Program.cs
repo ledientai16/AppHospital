@@ -16,7 +16,7 @@ namespace AppHospital
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormAdminMenu());
+            Application.Run(new FormLogin());
         }
     }
 }

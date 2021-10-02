@@ -8,25 +8,25 @@ namespace AppHospital.DAO
 {
     class DAO_Service
     {
-        HospitalEntities1 db;
+        HospitalEntities db;
         public DAO_Service()
         {
-            db = new HospitalEntities1();
+            db = new HospitalEntities();
         }
         public dynamic getAllService()
         {
             var list = db.Services.Select(s => new {
                 s.ID,
-                s.NameService,
+                s.Name,
                 s.Fee,
                 s.Description,
-                s.Medical.Name
+                medicalName = s.Medical.Name
             }).ToList();
             return list;
         }
         public void addService(Service s)
         {
-            db.Services.Add(s);
+            object p = db.Services.Add(s);
             db.SaveChanges();
         }
         public Service GetServicebyID(int id)
@@ -50,7 +50,7 @@ namespace AppHospital.DAO
         {
             Service sv = new Service();
             sv = GetServicebyID(s.ID);
-            sv.NameService = s.NameService;
+            sv.Name = s.Name;
             sv.Description = s.Description;
             sv.Fee = s.Fee;
             sv.MedicalID = s.MedicalID;

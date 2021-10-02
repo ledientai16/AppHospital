@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -56,32 +71,53 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Appointment.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="BUS\BUS_Doctor.cs" />
+    <Compile Include="BUS\BUS_Drug.cs" />
+    <Compile Include="BUS\BUS_DrugDetail.cs" />
     <Compile Include="BUS\BUS_Medicals.cs" />
     <Compile Include="BUS\BUS_Nurse.cs" />
+    <Compile Include="BUS\BUS_Patient.cs" />
+    <Compile Include="BUS\BUS_Prescription.cs" />
     <Compile Include="BUS\BUS_Service.cs" />
     <Compile Include="BUS\BUS_User.cs" />
     <Compile Include="DAO\DAO_Doctor.cs" />
+    <Compile Include="DAO\DAO_Drug.cs" />
+    <Compile Include="DAO\DAO_DrugDetail.cs" />
     <Compile Include="DAO\DAO_Medicals.cs" />
     <Compile Include="DAO\DAO_Nurse.cs" />
+    <Compile Include="DAO\DAO_Patient.cs" />
+    <Compile Include="DAO\DAO_Prescription.cs" />
     <Compile Include="DAO\DAO_Service.cs" />
     <Compile Include="DAO\DAO_User.cs" />
+    <Compile Include="DAO\HospitalEntities1.cs" />
     <Compile Include="Doctor.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Drug.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="DrugDetail.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormDrugDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormDrugDetail.Designer.cs">
+      <DependentUpon>FormDrugDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPatientManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPatientManager.Designer.cs">
+      <DependentUpon>FormPatientManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrescriptionManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrescriptionManager.Designer.cs">
+      <DependentUpon>FormPrescriptionManager.cs</DependentUpon>
     </Compile>
     <Compile Include="FormAdminMenu.cs">
       <SubType>Form</SubType>
@@ -119,6 +155,12 @@
     <Compile Include="FormNurseManager.Designer.cs">
       <DependentUpon>FormNurseManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormServiceInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormServiceInvoice.Designer.cs">
+      <DependentUpon>FormServiceInvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormServiceManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,58 +173,70 @@
     <Compile Include="FormUserManager.Designer.cs">
       <DependentUpon>FormUserManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUserProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUserProfile.Designer.cs">
+      <DependentUpon>FormUserProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HospitalEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HospitalEntity.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Invoice.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Medical.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="MedicalExaminationCard.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Nurse.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Patient.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Prescription.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="ServiceInvoice.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagram.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>HospitalEntity.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormAdminMenu.resx">
       <DependentUpon>FormAdminMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDoctorManager.resx">
       <DependentUpon>FormDoctorManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDrugDetail.resx">
+      <DependentUpon>FormDrugDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDrugManager.resx">
+      <DependentUpon>FormDrugManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -193,8 +247,23 @@
     <EmbeddedResource Include="FormNurseManager.resx">
       <DependentUpon>FormNurseManager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormPatientManager.resx">
+      <DependentUpon>FormPatientManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrescriptionManager.resx">
+      <DependentUpon>FormPrescriptionManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormServiceInvoice.resx">
+      <DependentUpon>FormServiceInvoice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormServiceManager.resx">
       <DependentUpon>FormServiceManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUserManager.resx">
+      <DependentUpon>FormUserManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUserProfile.resx">
+      <DependentUpon>FormUserProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -206,12 +275,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="Model1.edmx">
+    <EntityDeploy Include="HospitalEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>HospitalEntity.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <None Include="HospitalEntity.edmx.diagram">
+      <DependentUpon>HospitalEntity.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -255,16 +324,31 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model1.Context.tt">
+    <None Include="Resources\left-alignment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HospitalEntity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>HospitalEntity.edmx</DependentUpon>
+      <LastGenOutput>HospitalEntity.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model1.tt">
+    <Content Include="HospitalEntity.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>HospitalEntity.edmx</DependentUpon>
+      <LastGenOutput>HospitalEntity.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

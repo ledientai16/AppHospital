@@ -26,6 +26,7 @@ namespace AppHospital
         public Nullable<int> Quantity { get; set; }
         public Nullable<System.DateTime> Expiry { get; set; }
         public Nullable<System.DateTime> Manufacturer { get; set; }
+        public string Type { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DrugDetail> DrugDetails { get; set; }

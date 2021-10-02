@@ -39,20 +39,14 @@ namespace AppHospital.BUS
         {
             if (dDoctor.CheckDoctorByID(id))
             {
-
-
-                try
+               try
                 {
-
                     dDoctor.DeleteDoctor(id);
                    return true;                }
                 catch (Exception e)
                 {
                     MessageBox.Show(e.Message);
-
                 }
-
-
             }
             return false;
         }

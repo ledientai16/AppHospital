@@ -1,5 +1,5 @@
-﻿//using System;
-using AppHospital.DAO;
+﻿using AppHospital.DAO;
+using AppHospital.DAO.AppHospital.DAO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace AppHospital.BUS
 {
- 
+
     class BUS_Nurse
     {
         DAO_Nurse dNurse;

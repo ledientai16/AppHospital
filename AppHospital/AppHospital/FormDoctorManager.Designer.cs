@@ -90,7 +90,7 @@ namespace AppHospital
             this.groupbox1.Controls.Add(this.label1);
             this.groupbox1.Location = new System.Drawing.Point(2, 30);
             this.groupbox1.Name = "groupbox1";
-            this.groupbox1.Size = new System.Drawing.Size(854, 180);
+            this.groupbox1.Size = new System.Drawing.Size(854, 173);
             this.groupbox1.TabIndex = 4;
             this.groupbox1.TabStop = false;
             this.groupbox1.Text = "Thông tin";
